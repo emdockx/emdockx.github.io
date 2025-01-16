@@ -1,0 +1,27 @@
+---
+title: <br>Mijn expertise
+listing: 
+  contents: expertise
+  type: grid
+  grid-columns: 3
+  grid-item-border: true
+  grid-item-align: left
+---
+
+<br>
+
+**Hiermee kan ik u verder helpen**
+
+Als advocaat kan ik u onder andere met de volgende rechtstakken helpen. Neem gerust contact op om uw specifieke situatie te bespreken en om te bekijken wat ik voor u kan betekenen.
+
+```{=html}
+<div style = "margin: 0px; text-align: left;">
+<a class="btn btn-primary" href="/contact.qmd" role="button" style="padding: 5px 5px; text-transform: none;">Neem contact op</a>
+</div>
+```
+
+<br>
+
+------------------------------------------------------------------------
+
+<br>

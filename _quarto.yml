@@ -1,0 +1,71 @@
+# website settings
+website:
+  
+  # Navigation bar
+  navbar:
+    pinned: true
+    collapse: true
+    collapse-below: "md"
+    menu: 
+    
+    # Pagina's
+    left:
+      - text: "<b style='color: white;'>Advocaat Julie Goyvaerts</b>"
+        href: startpagina.qmd
+      - text: "Over mij"
+        href: over.qmd
+      - text: "Expertise"
+        href: expertise.qmd
+      - text: "Contact"
+        href: contact.qmd
+    
+    # Contact knoppen
+    right:
+      - icon: telephone
+        href: "tel:0032493861566"
+      - icon: whatsapp
+        href: "https://wa.link/v9j1jp"
+        target: "_blank"
+      - icon: envelope-fill
+        href: "mailto:julie.goyvaerts@advocaat.be"  
+      - icon: linkedin
+        href: "https://www.linkedin.com/in/juliegoyvaerts/"
+  
+  # Zoekbalk
+  search: 
+    location: navbar
+    type: textbox
+
+  # Onderkant van pagina
+  page-footer:
+    center: <span class="faux-block">&#169; 2025 Advocaat Julie Goyvaerts | <a href="/documenten/Algemene-Voorwaarden-Advocaat-Julie-Goyvaerts.pdf" target="_blank">Algemene voorwaarden</a> | <a href="/documenten/Privacybeleid-Advocaat-Julie-Goyvaerts.pdf" target="_blank">Privacybeleid</a></span>
+
+project:
+  type: website
+  output-dir: docs
+
+  preview: 
+    port: 22222
+    browser: true
+    watch-inputs: true
+    navigate: true
+
+execute:
+  freeze: true
+
+format:
+  html:
+    fontsize: 1.1em
+    theme: 
+      - lumen
+      - styles.scss
+    toc: false
+    code-link: true
+    anchor-sections: true
+    fig-cap-location: margin
+    reference-location: margin
+    footnotes-hover: true
+    
+language: 
+  search-text-placeholder:
+    Zoeken

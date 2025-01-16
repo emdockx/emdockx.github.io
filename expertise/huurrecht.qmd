@@ -1,0 +1,14 @@
+---
+title: <br><b>Huurrecht</b>
+description: <br>Ondersteuning bij alle huurrechtelijke kwesties, waaronder huurcontracten, opzeggingen, gebreken aan de huurwoning, en conflicten tussen huurder en verhuurder, met nadruk op een correcte toepassing van de wetgeving.
+image: /documenten/huurrecht.jpeg
+---
+
+<br>
+
+```{=html}
+<div style = "margin: 0px; text-align: left;">
+<a class="btn btn-primary" href="/contact.qmd" role="button" style="padding: 5px 5px; text-transform: none;">Neem contact op</a>
+</div>
+```
+

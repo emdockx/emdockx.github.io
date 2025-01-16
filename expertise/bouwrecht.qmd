@@ -1,0 +1,14 @@
+---
+title: <br><b>Bouwrecht</b>
+description: <br>Begeleiding in juridische geschillen binnen de bouwsector, zoals problemen met aannemingscontracten, oplevering van werken, verborgen gebreken en andere technische of financiële geschillen, met aandacht voor praktische en haalbare oplossingen.
+image: /documenten/bouwrecht.jpeg
+---
+
+<br>
+
+```{=html}
+<div style = "margin: 0px; text-align: left;">
+<a class="btn btn-primary" href="/contact.qmd" role="button" style="padding: 5px 5px; text-transform: none;">Neem contact op</a>
+</div>
+```
+

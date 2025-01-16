@@ -1,0 +1,13 @@
+---
+title: <br><b>Vreemdelingenrecht</b>
+description: <br>Ondersteuning van cliënten bij procedures rondom verblijfsvergunningen, asiel, gezinshereniging, naturalisatie en andere immigratievraagstukken, met oog voor zowel juridische als humanitaire aspecten.
+image: /documenten/vreemdelingenrecht.jpeg
+---
+
+<br>
+
+```{=html}
+<div style = "margin: 0px; text-align: left;">
+<a class="btn btn-primary" href="/contact.qmd" role="button" style="padding: 5px 5px; text-transform: none;">Neem contact op</a>
+</div>
+```

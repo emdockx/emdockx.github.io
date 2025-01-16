@@ -1,0 +1,90 @@
+/*-- scss:defaults --*/
+
+/* From https://github.com/andrewheiss/ath-quarto/blob/main/html/ath.scss */
+
+$white:    #ffffff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #373a3c !default;
+$gray-900: #212529 !default;
+$black:    #000000 !default;
+
+$blue:    #2780e3 !default;
+$indigo:  #6610f2 !default;
+$purple:  #170C3A !default;
+$pink:    #A52C60 !default;
+$red:     #CF4446 !default;
+$orange:  #EE6A24 !default;
+$yellow:  #F6D645 !default;
+$green:   #118230 !default;
+$teal:    #068194 !default;
+$cyan:    #3093CF !default;
+
+$primary:   $teal !default;
+$secondary: $gray-700 !default;
+$success:   $green !default;
+$info:      $cyan !default;
+$warning:   $orange !default;
+$danger:    $red !default;
+$light:     $gray-400 !default;
+$dark:      $black !default;
+
+// Links
+$link-color: $primary !default;
+$link-hover-color: $red !default;
+$link-hover-decoration: underline !default;
+
+// Base document colors
+$body-bg: $white !default;
+$body-color: $black !default;
+
+// Footer
+$footer-bg: $gray-300 !default;
+$footer-fg: $gray-900 !default;
+
+// Code copy
+$btn-code-copy-color-active: $orange !default;
+
+// Navigation footer
+.nav-footer {
+    align-items: center;
+    flex-wrap: nowrap;
+    min-height: 3em;
+
+    a {
+        color: $primary;
+    }
+
+    .faux-block {
+        display: block;
+        padding-bottom: 0.4em;
+    }
+
+    .nav-footer-center {
+        text-align: center;
+        position: relative;
+        margin: 0 auto;
+        width: auto;
+    }
+
+    .nav-footer-left {display: none;}
+    .nav-footer-right {display: none;}
+}
+
+// Contactformulier
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid $gray-400;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.icon {
+  color: white;
+}

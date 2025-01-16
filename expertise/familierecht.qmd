@@ -1,0 +1,17 @@
+---
+title: <br><b>Familierecht</b>
+description: <br>Omvattende begeleiding bij familiale geschillen, zoals echtscheidingen, samenlevingsbreuken, kinderbijstand, omgangsregelingen, en erfrecht, met oog voor menselijke en juridische aspecten.
+image: /documenten/familierecht.jpeg
+---
+
+<br>
+
+```{=html}
+<div style = "margin: 0px; text-align: left;">
+<a class="btn btn-primary" href="/contact.qmd" role="button" style="padding: 5px 5px; text-transform: none;">Neem contact op</a>
+</div>
+```
+
+
+
+

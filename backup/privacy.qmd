@@ -1,0 +1,65 @@
+---
+title: <br>Privacybeleid
+resources:
+  - "/documenten/Privacybeleid_Advocaat_Julie_Goyvaerts.pdf"
+docs:
+  pdf: "/documenten/Privacybeleid_Advocaat_Julie_Goyvaerts.pdf"
+---
+
+<br>
+
+Deze website is eigendom van Advocaat Julie Goyvaerts.
+
+<br>
+
+**Contactgegevens:**
+
+Advocaat Julie Goyvaerts<br> Kasteelpleinstraat 79<br>2000 Antwerpen<br>
+
+Telefoon: <a href="tel:0032493861566">+32 493 86 15 66</a><br>E-mail: <a href="mailto:julie.goyvaerts@advocaat.be">julie.goyvaerts@advocaat.be</a><br>
+
+KBO-nummer: BE0751.922.224<br>Derdenrekening: BE85 6304 2321 5406<br>
+
+<br>
+
+------------------------------------------------------------------------
+
+<br>
+
+**1. Algemeen**
+
+Advocaat Julie Goyvaerts verzekert u de vertrouwelijke verwerking van de gegevens die u meedeelt of waartoe wij toegang hebben, overeenkomstig de bepalingen van het beroepsgeheim en de Wet van 8 december 1992 tot bescherming van de persoonlijke levenssfeer ten opzichte van de verwerking van persoonsgegevens. Het is niet ondenkbaar dat ons privacy- en cookiebeleid in de nabije toekomst wordt uitgebreid of gewijzigd. We raden u daarom ook aan om regelmatig op deze pagina te kijken of er wijzigingen zijn doorgevoerd.
+
+**2. Verantwoordelijke voor de verwerking**
+
+De website is eigendom van en wordt beheerd door Advocaat Julie Goyvaerts. De verantwoordelijke voor de verwerking van uw persoonsgegevens is Advocaat Julie Goyvaerts. U kan de verantwoordelijke voor de verwerking van de persoonsgegevens bereiken per telefoon via +32493861566.
+
+**3. Verwerkte persoonsgegevens**
+
+De persoonsgegevens die u meedeelt bij het invullen van het contactformulier (uw naam, e-mail adres, telefoon- of gsm-nummer en bericht) worden verwerkt door Advocaat Julie Goyvaerts met het oog op het beheer van haar relatie met u, met inbegrip van het verzenden van een e-mail of enige andere communicatie om u op de hoogte te brengen en houden van onze diensten. Zonder deze gegevens kunnen we uw vraag niet beantwoorden. Door uw persoonsgegevens mee te delen, verklaart u zich onvoorwaardelijk akkoord met de verwerking van de door u ingevoerde persoonsgegevens. Deze gegevens worden door bewaard voor een periode die noodzakelijk is om onze diensten te kunnen uitvoeren.
+
+**4. Doeleinden van de verwerking**
+
+De via deze website verkregen persoonsgegevens worden enkel verwerkt voor de communicatie met u m.b.t. het kantoor, haar werkwijze of de door ons geleverde diensten. Zij worden nooit aan derden meegedeeld.
+
+**5. Recht op inzage of verbetering**
+
+De gebruiker beschikt over een wettelijk recht op inzage of correctie van zijn persoonsgegevens. Mits bewijs van identiteit (kopie identiteitskaart) kunt u via een schriftelijke, gedateerde en ondertekende aanvraag aan Advocaat Julie Goyvaerts, gratis de schriftelijke mededeling bekomen van uw persoonsgegevens. Indien nodig kunt u ook vragen de gegevens te corrigeren die onjuist, niet volledig of niet pertinent zouden zijn. U heeft tevens steeds het recht een klacht in te dienen bij de Privacycommissie.
+
+**6. Gebruik van ‘cookies’**
+
+Advocaat Julie Goyvaerts maakt geen gebruik van cookies.
+
+<br>
+
+------------------------------------------------------------------------
+
+<br>
+
+```{=html}
+<div style = "margin: 0px; text-align: left;">
+<a class="btn btn-primary" href="/documenten/Privacybeleid_Advocaat_Julie_Goyvaerts.pdf" role="button" target="_blank" style="padding: 5px 5px; text-transform: none;">Download ons Privacybeleid (PDF)
+</a>
+</div>
+```
+
