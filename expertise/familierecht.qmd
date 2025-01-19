@@ -4,6 +4,8 @@ description: <br>Omvattende begeleiding bij familiale geschillen, zoals echtsche
 image: /documenten/familierecht.jpeg
 ---
 
+*Sleutelwoorden: ...*
+
 <br>
 
 ```{=html}
@@ -11,7 +13,3 @@ image: /documenten/familierecht.jpeg
 <a class="btn btn-primary" href="/contact.qmd" role="button" style="padding: 5px 5px; text-transform: none;">Neem contact op</a>
 </div>
 ```
-
-
-
-

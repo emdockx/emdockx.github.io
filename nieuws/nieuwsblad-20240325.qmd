@@ -1,0 +1,22 @@
+---
+title: "<br><b>Dader van home invasion knipt enkelband door en vlucht: parket eist zes jaar cel</b>"
+date: 2024-03-25
+lang: nl
+author: Het Nieuwsblad<br>Sam Reyntjens
+categories: [Het Nieuwsblad, Strafrecht]
+description: "<br>BRASSCHAAT - De man die vorig jaar in Brasschaat een villa binnendrong en de bejaarde bewoners beroofde, heeft zijn enkelband doorgeknipt en is op de vlucht. Het parket eiste maandag zes jaar cel voor de 43-jarige Nestor K. 'Hij gedroeg zich als zelfverklaard incasso-agent.'<br><br>"
+image: /documenten/nieuwsblad-20240325.png
+---
+
+<br>
+
+```{=html}
+<div style = "margin: 0px; text-align: left;">
+<a class="btn btn-primary" href="https://www.nieuwsblad.be/cnt/dmf20240325_94182754" target="_blank" role="button" style="padding: 5px 5px; text-transform: none;">Link naar het artikel</a>
+</div>
+```
+
+<br><br>
+
+<a href="https://www.nieuwsblad.be/cnt/dmf20240325_94182754" target="_blank"><img src="/documenten/nieuwsblad-20240325.png" style="height: 100%; width: 100%; object-fit: contain;" alt="Nieuwsblad artikel afbeelding"></a>
+<span style="font-size: 14px; text-align: right; display: block;">*© RR*</span>

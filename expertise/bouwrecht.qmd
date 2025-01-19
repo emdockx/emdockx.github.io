@@ -4,6 +4,8 @@ description: <br>Begeleiding in juridische geschillen binnen de bouwsector, zoal
 image: /documenten/bouwrecht.jpeg
 ---
 
+*Sleutelwoorden: ...*
+
 <br>
 
 ```{=html}
@@ -11,4 +13,3 @@ image: /documenten/bouwrecht.jpeg
 <a class="btn btn-primary" href="/contact.qmd" role="button" style="padding: 5px 5px; text-transform: none;">Neem contact op</a>
 </div>
 ```
-

@@ -4,8 +4,13 @@
 
 <br>
 
-## Heeft u behoefte aan juridische begeleiding die effectief is en op uw specifieke behoeften is afgestemd?
+**Heeft u behoefte aan juridische begeleiding die effectief is en op uw specifieke behoeften is afgestemd?**
 
-Bij advocaat Julie Goyvaerts bent u aan het juiste adres.
+Bij advocaat Julie Goyvaerts bent u aan het juiste adres.<br><br>
 
-Contacteer mij of ontdekt hieronder meer
+```{=html}
+<div style = "margin: 0px; text-align: left;">
+<a class="btn btn-primary" href="/contact.qmd" role="button" style="padding: 5px 5px; text-transform: none;">Neem contact op</a>
+</div>
+```
+

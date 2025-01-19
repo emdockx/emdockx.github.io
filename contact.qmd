@@ -1,5 +1,5 @@
 ---
-title: <br>Contacteer mij
+title: <br>Neem contact op
 ---
 
 <br>
@@ -22,17 +22,34 @@ KBO-nummer: BE0751.922.224<br>Derdenrekening: BE85 6304 2321 5406<br>
 
 ```{=html}
 <div class="custom-form">
+  <style>
+    .custom-form input[type="text"],
+    .custom-form input[type="email"],
+    .custom-form input[type="phone"],
+    .custom-form textarea {
+        background-color: white;
+        color: black;
+        border: 1px solid #ccc;
+        padding: 5px;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+  </style>
   <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="625e61a1-5f6b-4820-8987-f9490ce5345b">
+      <input type="hidden" name="access_key" value="8c863fcb-4ce6-4ead-b1e5-ac9ff65abc5f">
       <input type="hidden" name="subject" value="Bericht via website contact formulier">
       
-      <label for="name"><br><i>Uw naam</i>:</label>
+      <label for="name"><br><i>Naam:</i></label>
       <input type="text" id="name" name="name" required>
       
-      <label for="email"><br><i>Uw e-mailadres of telefoon</i>:</label>
-      <input type="message" id="email" name="email" required>
+      <label for="email"><br><i>E-mailadres:</i></label>
+      <input type="email" id="email" name="email" required>
       
-      <label for="message"><br><i>Uw bericht</i>:</label>
+      <label for="phone"><br><i>Telefoonnummer:</i></label>
+      <input type="phone" id="phone" name="phone" required>
+      
+      <label for="message"><br><i>Bericht:</i></label>
       <textarea id="message" name="message" required></textarea>
       
       <button class="btn btn-primary" type="submit" style="padding: 5px 5px; text-transform: none;">Verzenden</button>
@@ -50,6 +67,6 @@ KBO-nummer: BE0751.922.224<br>Derdenrekening: BE85 6304 2321 5406<br>
 
 ```{=html}
 <div class="maps">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2499.530304329548!2d4.400008713128004!3d51.20930593231731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f6ef7fee1cf9%3A0xcb88e39f7e8897a7!2sKasteelpleinstraat%2079%2C%202000%20Antwerpen!5e0!3m2!1sen!2sbe!4v1693425129390!5m2!1sen!2sbe" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2499.530304329548!2d4.400008713128004!3d51.20930593231731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f6ef7fee1cf9%3A0xcb88e39f7e8897a7!2sKasteelpleinstraat%2079%2C%202000%20Antwerpen!5e0!3m2!1sen!2sbe!4v1693425129390!5m2!1sen!2sbe" width=100% height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 ```

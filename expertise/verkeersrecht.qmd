@@ -1,8 +1,10 @@
 ---
-title: <br><b>Verkeerstrecht</b>
+title: <br><b>Verkeersrecht</b>
 description: <br>Gespecialiseerde hulp bij alle aspecten van verkeersrecht, zoals snelheidsovertredingen, dronken rijden, rijverboden, en schadeclaims na verkeersongevallen, met oog voor een efficiënte oplossing en schadebeperking.
 image: /documenten/verkeersrecht.jpeg
 ---
+
+*Sleutelwoorden: ...*
 
 <br>
 

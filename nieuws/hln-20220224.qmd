@@ -1,0 +1,22 @@
+---
+title: "<br><b>De ramen waren verduisterd en de voordeur vochtig: vijf mannen riskeren tot vijf jaar cel voor cannabisplantage in Ekeren</b>"
+date: 2022-02-24
+lang: nl
+author: HLN<br>Jasper Van Der Schoot
+categories: [HLN, Strafrecht]
+description: "<br>Vijf mannen die betrokken zouden zijn geweest bij de uitbating van een cannabisplantage in Ekeren riskeren tot vijf jaar cel, evenals boetes tot 40.000 euro. In februari van 2022 werden ze betrapt toen de politie, die de plantage al een tijdje in gaten hield, binnenviel. Ze troffen in de kelder van de woning maar liefst 1.008 plantjes aan. Al minstens drie oogsten zouden zijn binnengehaald.<br><br>"
+image: /documenten/hln-20220224.jpeg
+---
+
+<br>
+
+```{=html}
+<div style = "margin: 0px; text-align: left;">
+<a class="btn btn-primary" href="https://www.hln.be/antwerpen/~ae51d5dc/" target="_blank" role="button" style="padding: 5px 5px; text-transform: none;">Link naar het artikel</a>
+</div>
+```
+
+<br><br>
+
+<a href="https://www.hln.be/antwerpen/~ae51d5dc/" target="_blank"><img src="/documenten/hln-20220224.jpeg" style="height: 100%; width: 100%; object-fit: contain;" alt="HLN artikel afbeelding"></a>
+<span style="font-size: 14px; text-align: right; display: block;">*© Parket Antwerpen*</span>

@@ -4,6 +4,8 @@ description: <br>Juridische bijstand en verdediging in strafzaken, van eenvoudig
 image: /documenten/strafrecht.jpeg
 ---
 
+*Sleutelwoorden: ...*
+
 <br>
 
 ```{=html}

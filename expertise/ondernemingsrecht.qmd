@@ -4,6 +4,8 @@ description: <br>Advies en ondersteuning voor ondernemers en bedrijven in een br
 image: /documenten/ondernemingsrecht.jpeg
 ---
 
+*Sleutelwoorden: ...*
+
 <br>
 
 ```{=html}
@@ -11,4 +13,3 @@ image: /documenten/ondernemingsrecht.jpeg
 <a class="btn btn-primary" href="/contact.qmd" role="button" style="padding: 5px 5px; text-transform: none;">Neem contact op</a>
 </div>
 ```
-
