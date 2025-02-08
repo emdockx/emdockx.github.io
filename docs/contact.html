@@ -30,11 +30,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a78e01259e7a4a12917fd6fcea32665f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-751cc366bbac84fe68d400fd18abd152.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -59,7 +60,6 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-2GDZEYNG7S', { 'anonymize_ip': true});
 </script>
-<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
@@ -194,7 +194,7 @@ gtag('config', 'G-2GDZEYNG7S', { 'anonymize_ip': true});
   <form action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="f98b2322-699b-4eb2-83b3-06d2b2da165e">
       <input type="hidden" name="subject" value="Bericht via website contact formulier">
-      <input type="hidden" name="redirect" value="http://localhost:3110/success.html">
+      <input type="hidden" name="redirect" value="https://emdockx.github.io/success.html">
       
       <label for="name"><br>Naam:</label>
       <input type="text" id="name" name="name" required="">
@@ -235,6 +235,32 @@ Kantoor enkel bereikbaar op afspraak!
 </div>
 </div>
 <div style="width: 100%"><iframe width="100%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=en&amp;q=Van%20Schoonbekestraat%2010+(Advocaat%20Julie%20Goyvaerts)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps handsets</a></iframe></div>
+<style>
+@media (max-width: 991px){.copyright {
+    position: fixed;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.25);
+    padding: 5px 10px;
+    border-radius: 5px;
+}}
+@media (min-width: 991px){.copyright {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.25);
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+}}
+</style>
+<p id="copyright" class="copyright">Deze achtergrondafbeelding is auteursrechtelijk beschermd door TV RRP/VK/OAP &amp; Regie der Gebouwen</p>
 
 
 
@@ -259,6 +285,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
@@ -667,5 +700,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

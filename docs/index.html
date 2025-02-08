@@ -30,11 +30,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1a6dedb785a3dd33e245efdef4aa537c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-751cc366bbac84fe68d400fd18abd152.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -59,7 +60,16 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-2GDZEYNG7S', { 'anonymize_ip': true});
 </script>
-<style>html{ scroll-behavior: smooth; }</style>
+<style>
+body {
+  background-image: url("documenten/justitie4.jpeg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+    }
+</style>
 
 
 </head>
@@ -139,6 +149,32 @@ gtag('config', 'G-2GDZEYNG7S', { 'anonymize_ip': true});
 
 
 
+<style>
+@media (max-width: 991px){.copyright {
+    position: fixed;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0.25);
+    padding: 5px 10px;
+    border-radius: 5px;
+}}
+@media (min-width: 991px){.copyright {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0.25);
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+}}
+</style>
+<p id="copyright" class="copyright">Deze achtergrondafbeelding is auteursrechtelijk beschermd door TV RRP/VK/OAP &amp; Regie der Gebouwen</p>
 
 
 
@@ -163,6 +199,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
@@ -571,5 +614,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
