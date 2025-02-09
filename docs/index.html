@@ -149,6 +149,12 @@ body {
 
 
 
+<!--
+
+
+
+
+```{=html}
 <style>
   .copyright {
     position: fixed;
@@ -158,42 +164,64 @@ body {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.25);
     background: rgba(0, 0, 0, 0.25);
-    padding: 5px 10px;
-    border-radius: 5px;
-    white-space: nowrap;
-    display: none; /* Initially hidden */
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    white-space: normal;
+    text-align: center;
+    display: none;
   }
+  
 </style>
 
-<p id="copyright" class="copyright">Deze achtergrondafbeelding is auteursrechtelijk beschermd door TV RRP/VK/OAP &amp; Regie der Gebouwen</p>
+<p id="copyright" class="copyright">Deze achtergrondafbeelding is auteursrechtelijk beschermd door TV RRP/VK/OAP & Regie der Gebouwen</p>
 
 <script>
-  // Function to check if the user has scrolled 98% of the page
   function checkScrollPosition() {
     const copyright = document.getElementById("copyright");
     const scrollPosition = window.innerHeight + window.scrollY;
     const documentHeight = document.documentElement.scrollHeight;
-    
-    // Check if the user has scrolled to 98% of the page
-    if (scrollPosition >= documentHeight * 0.98) {
-      copyright.style.display = "block"; // Show the text
-    } else {
-      copyright.style.display = "none"; // Hide the text if not scrolled 95%
-    }
-  }
-
-  // Listen for the scroll event
+    if (scrollPosition >= documentHeight * 0.98) {copyright.style.display = "block";} else {copyright.style.display = "none";}}
   window.addEventListener("scroll", checkScrollPosition);
-
-  // Delay initial check to allow page load
   window.addEventListener("load", function() {
-    // Hide the copyright text when the page is first loaded
     const copyright = document.getElementById("copyright");
     copyright.style.display = "none";
-    // Now, check scroll position after the page has loaded
     checkScrollPosition();
   });
 </script>
+```
+
+```{=html}
+<style>
+  .footer {
+      width: 100%;
+      background-color: #470e22;
+      font-size: 0.8em;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+        }
+  .footer span a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+        }
+</style>
+<body>
+    <footer class="footer"><span>
+      <a>© 2025 JULIE GOYVAERTS</a>
+      <a href="/documenten/Algemene-Voorwaarden-Advocaat-Julie-Goyvaerts.pdf" target="_blank">VOORWAARDEN</a>
+      <a href="/documenten/Privacybeleid-Advocaat-Julie-Goyvaerts.pdf" target="_blank">PRIVACYBELEID</a>
+    </span></footer>
+</body>
+```
+
+
+
+
+-->
 
 
 
@@ -616,18 +644,41 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<style>
+  .copyright {
+    position: relative;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0);
+    padding: 0px 100px 0px 100px;
+    border-radius: 8px;
+    white-space: normal;
+    text-align: center;
+  }
+  .footer {
+    width: 100%;
+    background-color: #470e22;
+    font-size: 0.8em;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+.footer span a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+  }
+</style>
+<p id="copyright" class="copyright">Deze achtergrondafbeelding is auteursrechtelijk beschermd door TV RRP/VK/OAP &amp; Regie der Gebouwen</p>
 <footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p><span>© 2025 Julie Goyvaerts | <a href="./documenten/Algemene-Voorwaarden-Advocaat-Julie-Goyvaerts.pdf" target="_blank">Voorwaarden</a> | <a href="./documenten/Privacybeleid-Advocaat-Julie-Goyvaerts.pdf" target="_blank">Privacybeleid</a></span></p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
-  </div>
+  <span>
+    <a>© 2025 JULIE GOYVAERTS</a>
+    <a href="./documenten/Algemene-Voorwaarden-Advocaat-Julie-Goyvaerts.pdf" target="_blank">VOORWAARDEN</a>
+    <a href="./documenten/Privacybeleid-Advocaat-Julie-Goyvaerts.pdf" target="_blank">PRIVACYBELEID</a>
+  </span>
 </footer>
 
 
