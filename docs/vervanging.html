@@ -35,7 +35,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-751cc366bbac84fe68d400fd18abd152.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7c692e2b266de2b004a3292643cbf7bd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -174,7 +174,7 @@ gtag('config', 'G-2GDZEYNG7S', { 'anonymize_ip': true});
 <p>In principe worden voor een vervanging steeds de volgende basistarieven (excl. BTW) gerekend. Van deze tarieven kan in redelijke mate worden afgeweken bij onvoorziene omstandigheden, waarbij steeds gestreefd wordt naar een billijke en transparante regeling voor alle partijen. Eventuele griffiekosten worden doorgerekend aan de werkelijke kostprijs. Indien meer dan 20 pagina’s moeten worden geprint, wordt €0,25 (excl. BTW) per geprinte pagina aangerekend. <br><br></p>
 
 <style type="text/css">
-.custable tr:hover{background-color: #f0e6e9; color: #FF331F}
+.custable tr:hover{background-color: rgba(240, 230, 233, 0.50); color: #FF331F}
 </style>
 
 <table class="custable" style="width: 90%; border-collapse: collapse; margin: 0 auto; font-size: 15px; background: transparent;">
@@ -227,39 +227,85 @@ gtag('config', 'G-2GDZEYNG7S', { 'anonymize_ip': true});
 <p><br></p>
 <hr>
 <p><br></p>
-<p><span style="color: #470e22; font-size: 1.2em"><strong>Contactgegevens:</strong></span></p>
-<p>Advocaat Julie Goyvaerts<br> Van Schoonbekestraat 10<br>2018 Antwerpen<br></p>
-<p>Telefoon: <a href="tel:0032493861566">+32 493 86 15 66</a><br>E-mail: <a href="mailto:julie.goyvaerts@advocaat.be">julie.goyvaerts@advocaat.be</a><br></p>
-<p>KBO-nummer: 0751.922.224<br>Kantoorrekening: BE28 3632 0323 2420<br>Derdenrekening: BE85 6304 2321 5406<br><br></p>
-<div style="margin: 0px; text-align: left;">
-<a class="btn btn-primary" href="./contact.html" role="button" style="padding: 5px 5px; text-transform: none;">Neem contact op</a>
-</div>
-<style>
-@media (max-width: 991px){.copyright {
-    position: fixed;
-    bottom: 200px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.25);
-    background: rgba(255, 255, 255, 0.25);
-    padding: 5px 10px;
-    border-radius: 5px;
-}}
-@media (min-width: 991px){.copyright {
-    position: fixed;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 14px;
-    color: rgba(0, 0, 0, 0.25);
-    background: rgba(255, 255, 255, 0.25);
-    padding: 5px 10px;
-    border-radius: 5px;
-    white-space: nowrap;
-}}
-</style>
-<p id="copyright" class="copyright">Deze achtergrondafbeelding is auteursrechtelijk beschermd door TV RRP/VK/OAP &amp; Regie der Gebouwen</p>
+<p><span style="color: #470e22; font-size: 1.2em"><strong>Advocaat Julie Goyvaerts</strong></span></p>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    .contact_div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .contact_div p {
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .contact_div p a {
+      text-decoration: none;
+      color: #470e22;
+    }
+    
+    .contact_div p a:hover {
+      text-decoration: underline;
+      color: #FF331F;
+    }
+    
+    .contact_icon {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-left: 10px;
+    }
+
+    .contact_icon i {
+      font-size: 30px;
+      color: #FF331F;
+    }
+    
+    .contact_icon i:hover {
+      filter: brightness(0.8); /* Darken the icon */
+    }
+    
+  </style>
+
+
+
+  <div class="contact_div">
+  
+    <div class="contact_icon">
+      <a href="tel:0032493861566" target="_blank">
+        <i class="fa-solid fa-square-phone"></i>
+      </a>
+      <p>
+        <a href="tel:0032493861566">+32 493 86 15 66</a>
+      </p>
+    </div>
+
+    <div class="contact_icon">
+      <a href="https://wa.link/v9j1jp" target="_blank">
+        <i class="fab fa-square-whatsapp"></i>
+      </a>
+      <p>
+        <a href="https://wa.link/v9j1jp">Stuur mij via WhatsApp</a>
+      </p>
+    </div>
+
+    <div class="contact_icon">
+      <a href="mailto:julie.goyvaerts@advocaat.be" target="_blank">
+        <i class="fa-solid fa-square-envelope"></i>
+      </a>
+      <p>
+        <a href="mailto:julie.goyvaerts@advocaat.be">julie.goyvaerts@advocaat.be</a>
+      </p>
+    </div>
+  </div>
+
+
 
 
 
