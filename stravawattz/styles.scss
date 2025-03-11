@@ -1,0 +1,25 @@
+/*-- scss:defaults --*/
+
+// colors
+
+/*-- scss:rules --*/
+.card-header {
+  background-color: #424242;
+}
+
+.nav-item > a:hover {
+  color: #fc4c02;
+}
+
+.nav-tabs .nav-link {
+  background-color: transparent;
+  border-color: transparent;
+  color: grey;
+  padding: 0.5em 1em;
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: white;
+}
