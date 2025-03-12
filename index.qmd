@@ -34,8 +34,8 @@ load("stravawattz.RData")
 
 ```{r running-box-sessions}
 #| content: valuebox
-#| title: "Last 365 Days"
 list(
+  title = paste("In", format(Sys.Date(), '%Y')),
   #icon = "hash",
   color = "success",
   value = paste0(length(df_running_365$id), " sessions")
@@ -86,7 +86,7 @@ list(
 list(
   #icon = "speedometer",
   color = "success",
-  value = paste0(floor(pace <- sum(df_running_365$distance * df_running_365$pace) / sum(df_running_365$distance)), ":", round((pace %% 1) * 60), "/km")
+  value = ifelse(is.nan(as.numeric(floor(pace <- sum(df_running_365$distance * df_running_365$pace) / sum(df_running_365$distance)), ":", round((pace %% 1) * 60))), "No data",paste0(floor(pace <- sum(df_running_365$distance * df_running_365$pace) / sum(df_running_365$distance)), ":", round((pace %% 1) * 60), "/km"))
 )
 ```
 
@@ -98,7 +98,7 @@ list(
 list(
   #icon = "speedometer",
   color = "success",
-  value = paste0(round(sum(df_running_365$speed * df_running_365$hr) / sum(df_running_365$speed), 0), "bpm")
+  value = ifelse(is.nan(as.numeric(round(sum(df_running_365$speed * df_running_365$hr) / sum(df_running_365$speed), 0))), "No data", paste0(round(sum(df_running_365$speed * df_running_365$hr) / sum(df_running_365$speed), 0), "bpm"))
 )
 ```
 
@@ -162,8 +162,8 @@ plot_map3_running
 
 ```{r cycling-box-sessions}
 #| content: valuebox
-#| title: "Last 365 Days"
 list(
+  title = paste("In", format(Sys.Date(), '%Y')),
   #icon = "hash",
   color = "warning",
   value = paste0(length(df_cycling_365$id), " sessions")
@@ -214,7 +214,7 @@ list(
 list(
   #icon = "speedometer",
   color = "warning",
-  value = paste0(round(sum(df_cycling_365$distance * df_cycling_365$speed) / sum(df_cycling_365$distance), 1), "km/h")
+  value = ifelse(is.nan(as.numeric(round(sum(df_cycling_365$distance * df_cycling_365$speed) / sum(df_cycling_365$distance), 1))), "No data", paste0(round(sum(df_cycling_365$distance * df_cycling_365$speed) / sum(df_cycling_365$distance), 1), "km/h"))
 )
 ```
 
@@ -226,7 +226,7 @@ list(
 list(
   #icon = "speedometer",
   color = "warning",
-  value = paste0(round(sum(df_cycling_365$speed * df_cycling_365$hr) / sum(df_cycling_365$speed), 0), "bpm")
+  value = ifelse(is.na(as.numeric(round(sum(df_cycling_365$speed * df_cycling_365$hr) / sum(df_cycling_365$speed), 0))), "No data", paste0(round(sum(df_cycling_365$speed * df_cycling_365$hr) / sum(df_cycling_365$speed), 0), "bpm"))
 )
 ```
 
@@ -290,8 +290,8 @@ plot_map3_cycling
 
 ```{r swimming-box-sessions}
 #| content: valuebox
-#| title: "Last 365 Days"
 list(
+  title = paste("In", format(Sys.Date(), '%Y')),
   #icon = "hash",
   color = "info",
   value = paste0(length(df_swimming_365$id), " sessions")
@@ -342,7 +342,7 @@ list(
 list(
   #icon = "speedometer",
   color = "info",
-  value = paste0(floor(pace <- sum(df_swimming_365$distance * df_swimming_365$pace) / sum(df_swimming_365$distance)/10), ":", round((pace %% 1) * 60), "/km")
+  value = ifelse(is.nan(as.numeric(floor(pace <- sum(df_swimming_365$distance * df_swimming_365$pace) / sum(df_swimming_365$distance)/10), ":", round((pace %% 1) * 60))), "No data", paste0(floor(pace <- sum(df_swimming_365$distance * df_swimming_365$pace) / sum(df_swimming_365$distance)/10), ":", round((pace %% 1) * 60), "/km"))
 )
 ```
 
@@ -354,7 +354,7 @@ list(
 list(
   #icon = "speedometer",
   color = "info",
-  value = paste0(round(sum(df_swimming_365$speed * df_swimming_365$hr) / sum(df_swimming_365$speed), 0), "bpm")
+  value = ifelse(is.nan(as.numeric(round(sum(df_swimming_365$speed * df_swimming_365$hr) / sum(df_swimming_365$speed), 0))), "No data", paste0(round(sum(df_swimming_365$speed * df_swimming_365$hr) / sum(df_swimming_365$speed), 0), "bpm"))
 )
 ```
 
