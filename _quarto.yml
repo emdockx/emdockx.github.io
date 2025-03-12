@@ -4,6 +4,7 @@ project:
 
 website:
   title: "stravawattz"
+  favicon: "https://static-00.iconduck.com/assets.00/strava-icon-512x512-47ehfaer.png"
 
 format:
   html:
