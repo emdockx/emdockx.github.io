@@ -20,6 +20,8 @@ library(lubridate)
 library(leaflet)
 library(DT)
 library(plotly)
+library(openmeteo)
+library(RColorBrewer)
 ```
 
 ```{r load-data}
@@ -187,6 +189,12 @@ plot_map2_running
 plot_map3_running
 ```
 
+```{r}
+#| title: "All"
+#| padding: 0px 
+plot_map4_running
+```
+
 # Cycling
 
 ## Row {height="20%"}
@@ -313,6 +321,12 @@ plot_map2_cycling
 #| title: "Longest"
 #| padding: 0px 
 plot_map3_cycling
+```
+
+```{r}
+#| title: "Heatmap"
+#| padding: 0px 
+plot_map4_cycling
 ```
 
 # Swimming
