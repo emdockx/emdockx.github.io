@@ -2,8 +2,15 @@ project:
   type: website
   output-dir: docs
 
+adsense:
+    client: "ca-pub-9616514614388484"
+    slot: "3251143003"
+
 website:
   favicon: "https://static-00.iconduck.com/assets.00/strava-icon-512x512-47ehfaer.png"
+  cookie-consent:
+    type: express
+    palette: dark
 
 format:
   html:
