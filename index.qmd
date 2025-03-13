@@ -32,7 +32,7 @@ load("stravawattz.RData")
 
 ### Window 1
 
-```{=html}
+::: {.center}
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9616514614388484"
      crossorigin="anonymous"></script>
 <!-- stravawattz_vertical -->
@@ -45,7 +45,7 @@ load("stravawattz.RData")
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-```
+:::
 
 ### Window 2
 
