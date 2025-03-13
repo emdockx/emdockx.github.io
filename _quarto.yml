@@ -7,10 +7,10 @@ adsense:
     slot: "5226569652"
 
 website:
-  favicon: "https://static-00.iconduck.com/assets.00/strava-icon-512x512-47ehfaer.png"
   cookie-consent:
     type: express
     palette: dark
+  favicon: "https://static-00.iconduck.com/assets.00/strava-icon-512x512-47ehfaer.png"
 
 format:
   html:
