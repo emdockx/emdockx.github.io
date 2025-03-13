@@ -17,6 +17,10 @@ format:
     theme:
       - darkly
       - styles.scss
+    include-in-header:
+      - text: |
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9616514614388484"
+            crossorigin="anonymous"></script>
     include-before-body:
       - text: |
           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9616514614388484"
