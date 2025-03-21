@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  
+resources:
+  - ads.txt
 
 adsense:
     client: "ca-pub-9616514614388484"
@@ -10,7 +13,7 @@ website:
   cookie-consent:
     type: express
     palette: dark
-  favicon: Stravawattz.tif
+  favicon: Stravawattz.png
 
 format:
   html:
