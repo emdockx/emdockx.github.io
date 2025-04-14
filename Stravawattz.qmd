@@ -121,7 +121,7 @@ list(
 list(
   #icon = "speedometer",
   color = "success",
-  value = ifelse(is.nan(as.numeric(floor(pace <- sum(df_running_365$distance * df_running_365$pace) / sum(df_running_365$distance)), ":", round((pace %% 1) * 60))), "No data",paste0(floor(pace <- sum(df_running_365$distance * df_running_365$pace) / sum(df_running_365$distance)), ":", round((pace %% 1) * 60), "/km"))
+  value = ifelse(is.nan(as.numeric(floor(pace <- sum(df_running_365$distance * df_running_365$pace) / sum(df_running_365$distance)), ":", round((pace %% 1) * 60))), "No data",paste0(floor(pace <- sum(df_running_365$distance * df_running_365$pace) / sum(df_running_365$distance)), ":", ifelse(round((pace %% 1) * 60) < 10, paste0("0", round((pace %% 1) * 60)), round((pace %% 1) * 60)), "/km"))
 )
 ```
 
@@ -389,7 +389,7 @@ list(
 list(
   #icon = "speedometer",
   color = "info",
-  value = ifelse(is.nan(as.numeric(floor(pace <- sum(df_swimming_365$distance * df_swimming_365$pace) / sum(df_swimming_365$distance)/10), ":", round((pace %% 1) * 60))), "No data", paste0(floor(pace <- sum(df_swimming_365$distance * df_swimming_365$pace) / sum(df_swimming_365$distance)/10), ":", round((pace %% 1) * 60), "/km"))
+  value = ifelse(is.nan(as.numeric(floor(pace <- sum(df_swimming_365$distance * df_swimming_365$pace) / sum(df_swimming_365$distance)/10), ":", round((pace %% 1) * 60))), "No data", paste0(floor(pace <- sum(df_swimming_365$distance * df_swimming_365$pace) / sum(df_swimming_365$distance)/10), ":", ifelse(round((pace %% 1) * 60) < 10, paste0("0", round((pace %% 1) * 60)), round((pace %% 1) * 60)), "/km"))
 )
 ```
 
