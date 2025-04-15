@@ -125,13 +125,13 @@ plot_calendar_running
 ```{r}
 #| padding: 0px
 #| title: "Cumulative Distance"
-plot_distance_running
+plot_cum_distance_running
 ```
 
 ```{r}
 #| padding: 0px
 #| title: "Cumulative Time"
-plot_time_running
+plot_cum_time_running
 ```
 
 ## Row {height="80%"}
