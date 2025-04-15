@@ -113,11 +113,25 @@ list(
 )
 ```
 
-### Column {width="85%"}
+### Column {width="42.5%"}
 
 ```{r running-plot-calendar}
 #| padding: 0px
 plot_calendar_running
+```
+
+### Column {.tabset title="Cumulative stats" width="42.5%"}
+
+```{r}
+#| padding: 0px
+#| title: "Cumulative Distance"
+plot_distance_running
+```
+
+```{r}
+#| padding: 0px
+#| title: "Cumulative Time"
+plot_time_running
 ```
 
 ## Row {height="80%"}
