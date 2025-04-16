@@ -7,8 +7,17 @@
   background-color: #424242;
 }
 
-.navbar-logo {
-  height: 100%;
+.tabset.card {
+    --bs-card-spacer-y: 10px;
+    --bs-card-spacer-x: 10px;
+}
+
+.card-title span {
+  font-size: 0.80rem;
+}
+
+.nav-tabs {
+  font-size: 0.80rem;
 }
 
 .nav-item > a:hover {
@@ -31,3 +40,14 @@
 footer {
     display: none !important;
 }
+
+
+/*.nav-footer {
+  min-height: 0em; 
+}
+
+.nav-footer {
+  padding-top: 0rem;
+  padding-bottom: 0rem; 
+}
+*/
