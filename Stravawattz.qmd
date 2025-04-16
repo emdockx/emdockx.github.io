@@ -40,7 +40,7 @@ load("stravawattz.RData")
 
 ### Column {width="15%"}
 
-#### Row
+#### Row {height="20%"}
 
 ```{r running-box-sessions}
 #| content: valuebox
@@ -52,7 +52,7 @@ list(
 )
 ```
 
-#### Row
+#### Row {height="20%"}
 
 ```{r running-box-distance}
 #| content: valuebox
@@ -64,7 +64,7 @@ list(
 )
 ```
 
-#### Row
+#### Row {height="20%"}
 
 ```{r running-box-time}
 #| content: valuebox
@@ -77,7 +77,7 @@ list(
 )
 ```
 
-#### Row
+#### Row {height="20%"}
 
 ```{r running-box-pace}
 #| content: valuebox
@@ -89,7 +89,7 @@ list(
 )
 ```
 
-#### Row
+#### Row {height="20%"}
 
 ```{r running-box-hr}
 #| content: valuebox
@@ -199,7 +199,7 @@ plot_map4_running
 
 ### Column {width="15%"}
 
-#### Row
+#### Row {height="14.29%"}
 
 ```{r cycling-box-sessions}
 #| content: valuebox
@@ -211,7 +211,7 @@ list(
 )
 ```
 
-#### Row
+#### Row {height="14.29%"}
 
 ```{r cycling-box-distance}
 #| content: valuebox
@@ -223,7 +223,7 @@ list(
 )
 ```
 
-#### Row
+#### Row {height="14.29%"}
 
 ```{r cycling-box-time}
 #| content: valuebox
@@ -236,7 +236,31 @@ list(
 )
 ```
 
-#### Row
+#### Row {height="14.29%"}
+
+```{r cycling-box-elevation}
+#| content: valuebox
+#| title: "Total Elevation"
+list(
+  #icon = "speedometer",
+  color = "warning",
+  value = paste0(round(sum(df_cycling_365$elevation, na.rm = TRUE), 1), " m")
+)
+```
+
+#### Row {height="14.29%"}
+
+```{r cycling-box-cadence}
+#| content: valuebox
+#| title: "Average Cadence"
+list(
+  #icon = "speedometer",
+  color = "warning",
+  value = paste0(round(mean(df_cycling_365$cadence, na.rm = TRUE), 1), " rpm")
+)
+```
+
+#### Row {height="14.29%"}
 
 ```{r cycling-box-pace}
 #| content: valuebox
@@ -248,19 +272,7 @@ list(
 )
 ```
 
-#### Row
-
-```{r cycling-box-cadence}
-#| content: valuebox
-#| title: "Average Cadence"
-list(
-  #icon = "speedometer",
-  color = "warning",
-  value = paste0(79, " rpm")
-)
-```
-
-#### Row
+#### Row {height="14.29%"}
 
 ```{r cycling-box-hr}
 #| content: valuebox
@@ -308,6 +320,12 @@ plot_time_cycling
 
 ```{r}
 #| padding: 0px
+#| title: "Elevation"
+plot_elevation_cycling
+```
+
+```{r}
+#| padding: 0px
 #| title: "Speed"
 plot_pace_cycling
 ```
@@ -334,6 +352,12 @@ plot_cum_distance_cycling
 #| padding: 0px
 #| title: "Time"
 plot_cum_time_cycling
+```
+
+```{r}
+#| padding: 0px
+#| title: "Elevation"
+plot_cum_elevation_cycling
 ```
 
 #### Row {height="75%"}
@@ -370,7 +394,7 @@ plot_map4_cycling
 
 ### Column {width="15%"}
 
-#### Row
+#### Row {height="20%"}
 
 ```{r swimming-box-sessions}
 #| content: valuebox
@@ -382,7 +406,7 @@ list(
 )
 ```
 
-#### Row
+#### Row {height="20%"}
 
 ```{r swimming-box-distance}
 #| content: valuebox
@@ -394,7 +418,7 @@ list(
 )
 ```
 
-#### Row
+#### Row {height="20%"}
 
 ```{r swimming-box-time}
 #| content: valuebox
@@ -407,7 +431,7 @@ list(
 )
 ```
 
-#### Row
+#### Row {height="20%"}
 
 ```{r swimming-box-pace}
 #| content: valuebox
@@ -419,7 +443,7 @@ list(
 )
 ```
 
-#### Row
+#### Row {height="20%"}
 
 ```{r swimming-box-hr}
 #| content: valuebox

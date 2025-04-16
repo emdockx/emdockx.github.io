@@ -37,6 +37,21 @@
   color: white;
 }
 
+.bslib-value-box .value-box-area {
+padding: 1rem 1rem;
+}
+
+.bslib-value-box .value-box-title {
+margin-bottom: 0rem;
+font-size: clamp(0.40rem,15cqw,0.90rem);
+}
+
+.bslib-value-box .value-box-value {
+margin-bottom: 0rem;
+font-size: clamp(.1em,15cqw,3em);
+}
+
+
 footer {
     display: none !important;
 }
