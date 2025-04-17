@@ -28,11 +28,66 @@ library(RColorBrewer)
 load("stravawattz.RData")
 ```
 
-# Start
+# Home
 
 ## Row {height="100%"}
 
-### Column {width="15%"}
+### Column {width="50%"}
+
+#### Row {height="50%"}
+
+TEXT 1
+
+#### Row {height="50%"}
+
+TEXT 2
+
+### Column {width="50%"}
+
+#### Row {height="15%"}
+
+```{r}
+#| content: valuebox
+list(
+  title = "RUNNING",
+  #icon = "hash",
+  color = "success",
+  value = paste0(length(df_running_365$id), " activities")
+)
+```
+
+```{r}
+#| content: valuebox
+list(
+  title = "CYCLING",
+  #icon = "hash",
+  color = "warning",
+  value = paste0(length(df_cycling_365$id), " activities")
+)
+```
+
+```{r}
+#| content: valuebox
+list(
+  title = "SWIMMING",
+  #icon = "hash",
+  color = "info",
+  value = paste0(length(df_swimming_365$id), " activities")
+)
+```
+
+#### Row {.tabset title="Activities this year" height="25%"}
+
+```{r}
+#| padding: 0px
+#| title: "2025"
+plot_calendar_frontpage_d
+```
+
+#### Row {height="60%"}
+
+TEXT 4
+
 
 # Running
 
@@ -48,7 +103,7 @@ list(
   title = paste("Running in", format(Sys.Date(), '%Y')),
   #icon = "hash",
   color = "success",
-  value = paste0(length(df_running_365$id), " sessions")
+  value = paste0(length(df_running_365$id), " activities")
 )
 ```
 
@@ -207,7 +262,7 @@ list(
   title = paste("Cycling in", format(Sys.Date(), '%Y')),
   #icon = "hash",
   color = "warning",
-  value = paste0(length(df_cycling_365$id), " sessions")
+  value = paste0(length(df_cycling_365$id), " activities")
 )
 ```
 
@@ -402,7 +457,7 @@ list(
   title = paste("Swimming in", format(Sys.Date(), '%Y')),
   #icon = "hash",
   color = "info",
-  value = paste0(length(df_swimming_365$id), " sessions")
+  value = paste0(length(df_swimming_365$id), " activities")
 )
 ```
 
