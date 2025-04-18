@@ -30,6 +30,110 @@ load("stravawattz.RData")
 
 # Home
 
+## Row {height="40%"}
+
+### Column {width="60%"}
+
+TEXT 1
+
+### Column {width="40%"}
+
+#### Card Tabset {.tabset title="Activities per year" height="50%"}
+
+##### 2025
+
+###### Column {width="100%"}
+
+####### Row {height="40%"}
+
+```{r}
+#| content: valuebox
+list(
+  title = "RUNNING",
+  #icon = "hash",
+  color = "success",
+  value = paste0(length(df_running_2025$id), " sessions")
+)
+```
+
+```{r}
+#| content: valuebox
+list(
+  title = "CYCLING",
+  #icon = "hash",
+  color = "warning",
+  value = paste0(length(df_cycling_2025$id), " sessions")
+)
+```
+
+```{r}
+#| content: valuebox
+list(
+  title = "SWIMMING",
+  #icon = "hash",
+  color = "info",
+  value = paste0(length(df_swimming_2025$id), " sessions")
+)
+```
+
+####### Row {height="60%"}
+
+```{r}
+plot_calendar_frontpage_2025
+```
+
+##### 2024
+
+###### Row {height="100%"}
+
+####### Column {width="100%"}
+
+######## Row {height="40%"}
+
+```{r}
+#| content: valuebox
+list(
+  title = "RUNNING",
+  #icon = "hash",
+  color = "success",
+  value = paste0(length(df_running_2024$id), " sessions")
+)
+```
+
+```{r}
+#| content: valuebox
+list(
+  title = "CYCLING",
+  #icon = "hash",
+  color = "warning",
+  value = paste0(length(df_cycling_2024$id), " sessions")
+)
+```
+
+```{r}
+#| content: valuebox
+list(
+  title = "SWIMMING",
+  #icon = "hash",
+  color = "info",
+  value = paste0(length(df_swimming_2024$id), " sessions")
+)
+```
+
+######## Row {height="60%"}
+
+```{r}
+plot_calendar_frontpage_2024
+```
+
+## Row {height="60%"}
+
+TEST
+
+
+
+# TEST 2
+
 ## Row {height="100%"}
 
 ### Column {width="50%"}
@@ -52,7 +156,7 @@ list(
   title = "RUNNING",
   #icon = "hash",
   color = "success",
-  value = paste0(length(df_running_365$id), " activities")
+  value = paste0(length(df_running_365$id), " sessions")
 )
 ```
 
@@ -62,7 +166,7 @@ list(
   title = "CYCLING",
   #icon = "hash",
   color = "warning",
-  value = paste0(length(df_cycling_365$id), " activities")
+  value = paste0(length(df_cycling_365$id), " sessions")
 )
 ```
 
@@ -72,21 +176,45 @@ list(
   title = "SWIMMING",
   #icon = "hash",
   color = "info",
-  value = paste0(length(df_swimming_365$id), " activities")
+  value = paste0(length(df_swimming_365$id), " sessions")
 )
 ```
 
-#### Row {.tabset title="Activities this year" height="25%"}
+#### Row {.tabset title="sessions per year" height="25%"}
 
 ```{r}
 #| padding: 0px
 #| title: "2025"
-plot_calendar_frontpage_d
+plot_calendar_frontpage_2025
+```
+
+```{r}
+#| padding: 0px
+#| title: "2024"
+plot_calendar_frontpage_2024
 ```
 
 #### Row {height="60%"}
 
-HERE COMES TEXT 4
+##### Column {.tabset title="Cards" width="100%"}
+
+###### Row {height="100%"}
+
+
+
+# TEST
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Running
 
@@ -102,7 +230,7 @@ list(
   title = paste("Running in", format(Sys.Date(), '%Y')),
   #icon = "hash",
   color = "success",
-  value = paste0(length(df_running_365$id), " activities")
+  value = paste0(length(df_running_365$id), " sessions")
 )
 ```
 
@@ -261,7 +389,7 @@ list(
   title = paste("Cycling in", format(Sys.Date(), '%Y')),
   #icon = "hash",
   color = "warning",
-  value = paste0(length(df_cycling_365$id), " activities")
+  value = paste0(length(df_cycling_365$id), " sessions")
 )
 ```
 
@@ -456,7 +584,7 @@ list(
   title = paste("Swimming in", format(Sys.Date(), '%Y')),
   #icon = "hash",
   color = "info",
-  value = paste0(length(df_swimming_365$id), " activities")
+  value = paste0(length(df_swimming_365$id), " sessions")
 )
 ```
 
