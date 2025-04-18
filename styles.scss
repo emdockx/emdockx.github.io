@@ -43,18 +43,13 @@ padding: 1rem 1rem;
 
 .bslib-value-box .value-box-title {
 margin-bottom: 0rem;
-font-size: clamp(0.40rem,15cqw,0.90rem);
+font-size: clamp(0.40rem,15cqw,0.85rem);
 }
 
 .bslib-value-box .value-box-value {
 margin-bottom: 0rem;
-font-size: clamp(.1em,15cqw,3em);
+font-size: clamp(.1em,15cqw,2.5em);
 }
-
-/*.card-body {
-  padding: 0 !important;
-}*/
-
 
 footer {
     display: none !important;

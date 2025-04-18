@@ -216,6 +216,7 @@ I retrieved my Strava data using an [OAuth 2.0 script](https://httr2.r-lib.org/a
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 ```
+
 # Running
 
 ## Row {height="100%"}
@@ -256,6 +257,18 @@ list(
   #icon = "speedometer",
   color = "success",
   value = ifelse(sum(df_running_365$time, na.rm = TRUE) / 60 >= 300, paste0(round(floor(sum(df_running_365$time, na.rm = TRUE) / 60 / 60), 0),"h", ifelse(round(((sum(df_running_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_running_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)<10,paste0("0",round(((sum(df_running_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_running_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)),round(((sum(df_running_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_running_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)), " min"), paste0(round(sum(df_running_365$time, na.rm = TRUE) / 60, 0), " min"))
+)
+```
+
+#### Row {height="20%"}
+
+```{r running-box-cadence}
+#| content: valuebox
+#| title: "Average Cadence"
+list(
+  #icon = "rocket-takeoff-fill",
+  color = "success",
+  value = paste0(161, " spm")
 )
 ```
 
@@ -615,6 +628,19 @@ list(
 
 #### Row {height="20%"}
 
+```{r swimming-box-lengths}
+#| content: valuebox
+#| title: "Total Lengths (50m)"
+#| padding: 0px
+list(
+  #icon = "speedometer",
+  color = "info",
+  value = paste0(ifelse(sum(df_swimming_365$distance)/50%%2==0, sum(df_swimming_365$distance)/50, (sum(df_swimming_365$distance)/50)+1), " lengths")
+)
+```
+
+#### Row {height="20%"}
+
 ```{r swimming-box-pace}
 #| content: valuebox
 #| title: "Average Pace"
@@ -728,6 +754,10 @@ plot_map3_swimming
 #| padding: 0px 
 plot_map3_swimming
 ```
+
+# ♥
+
+UNDER DEVELOPMENT
 
 # Datasets
 
