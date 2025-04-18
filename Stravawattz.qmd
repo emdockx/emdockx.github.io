@@ -30,11 +30,21 @@ load("stravawattz.RData")
 
 # Home
 
-## Row {height="40%"}
+## Row {height="60%"}
 
 ### Column {width="60%"}
 
-TEXT 1
+#### Row {height="20%"}
+
+HERE COMES BANNER
+
+#### Row {height="80%"}
+
+<strong>WELCOME TO MY STRAVA DASHBOARD!</strong>
+
+***Wattz up!*** I'm Manu — if you're reading this, you're probably a fellow data enthousiast or just someone who enjoys seeing how others move through the world. Either way, welcome!
+
+This page is a personal dashboard for my runs, rides, swims, and everything in between. I started tracking my activities in 2023 and have since built up a fun little dataset. Rather than spring for a Premium Strava subscription, I decided to build this dashboard myself — to get a clearer view of my progress and tinker with my data.
 
 ### Column {width="40%"}
 
@@ -126,29 +136,13 @@ list(
 plot_calendar_frontpage_2024
 ```
 
-## Row {height="60%"}
+##### 2023
 
-TEST
+###### Row {height="100%"}
 
+####### Column {width="100%"}
 
-
-# TEST 2
-
-## Row {height="100%"}
-
-### Column {width="50%"}
-
-#### Row {height="50%"}
-
-HERE COMES TEXT 1
-
-#### Row {height="50%"}
-
-HERE COMES TEXT 2
-
-### Column {width="50%"}
-
-#### Row {height="15%"}
+######## Row {height="40%"}
 
 ```{r}
 #| content: valuebox
@@ -156,7 +150,7 @@ list(
   title = "RUNNING",
   #icon = "hash",
   color = "success",
-  value = paste0(length(df_running_365$id), " sessions")
+  value = paste0(length(df_running_2023$id), " sessions")
 )
 ```
 
@@ -166,7 +160,7 @@ list(
   title = "CYCLING",
   #icon = "hash",
   color = "warning",
-  value = paste0(length(df_cycling_365$id), " sessions")
+  value = paste0(length(df_cycling_2023$id), " sessions")
 )
 ```
 
@@ -176,46 +170,52 @@ list(
   title = "SWIMMING",
   #icon = "hash",
   color = "info",
-  value = paste0(length(df_swimming_365$id), " sessions")
+  value = paste0(length(df_swimming_2023$id), " sessions")
 )
 ```
 
-#### Row {.tabset title="sessions per year" height="25%"}
+######## Row {height="60%"}
 
 ```{r}
-#| padding: 0px
-#| title: "2025"
-plot_calendar_frontpage_2025
+plot_calendar_frontpage_2023
 ```
 
-```{r}
-#| padding: 0px
-#| title: "2024"
-plot_calendar_frontpage_2024
+## Row {height="40%"}
+
+### Row {height="100%"}
+
+#### Column {width="25%"}
+
+##### Row {height="100%"}
+
+<u>**Navigating the dashboard**<br></u>
+
+Explore my running, cycling and swimming stats or see the entire datasets. If you see interesting patterns or ways to improve my fitness, have ideas for new visualizations, or just want to chat about (this kind of) data, I’d love to hear from you.
+
+#### Column {width="34%"}
+
+##### Row {height="100%"}
+
+<u>**Getting data from Strava**<br></u>
+
+I retrieved my Strava data using an [OAuth 2.0 script](https://httr2.r-lib.org/articles/oauth.html){target="_blank"} in R, authenticated via the [Strava API](https://developers.strava.com){target="_blank"}. If you're interested in the script, reach out to me.
+
+#### Column {width="40%"}
+
+```{=html}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9616514614388484"
+     crossorigin="anonymous"></script>
+<!-- stravawattz_frontpage -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9616514614388484"
+     data-ad-slot="8670886418"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 ```
-
-#### Row {height="60%"}
-
-##### Column {.tabset title="Cards" width="100%"}
-
-###### Row {height="100%"}
-
-
-
-# TEST
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Running
 
 ## Row {height="100%"}
@@ -747,7 +747,6 @@ plot_map3_swimming
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 ```
-
 ## Row {height="10%"}
 
 ### Column
