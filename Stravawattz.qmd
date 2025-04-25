@@ -256,7 +256,7 @@ list(
 list(
   #icon = "speedometer",
   color = "success",
-  value = ifelse(sum(df_running_365$time, na.rm = TRUE) / 60 >= 300, paste0(round(floor(sum(df_running_365$time, na.rm = TRUE) / 60 / 60), 0),"h", ifelse(round(((sum(df_running_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_running_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)<10,paste0("0",round(((sum(df_running_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_running_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)),round(((sum(df_running_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_running_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)), " min"), paste0(round(sum(df_running_365$time, na.rm = TRUE) / 60, 0), " min"))
+  value = ifelse(sum(df_running_365$time, na.rm = TRUE) / 60 >= 300, paste0(round(floor(sum(df_running_365$time, na.rm = TRUE) / 60 / 60), 0)," h ", ifelse(round(((sum(df_running_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_running_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)<10,paste0("0",round(((sum(df_running_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_running_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)),round(((sum(df_running_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_running_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)), " min"), paste0(round(sum(df_running_365$time, na.rm = TRUE) / 60, 0), " min"))
 )
 ```
 
@@ -280,7 +280,7 @@ list(
 list(
   #icon = "speedometer",
   color = "success",
-  value = ifelse(is.nan(as.numeric(floor(pace <- sum(df_running_365$distance * df_running_365$pace) / sum(df_running_365$distance)), ":", round((pace %% 1) * 60))), "No data",paste0(floor(pace <- sum(df_running_365$distance * df_running_365$pace) / sum(df_running_365$distance)), ":", ifelse(round((pace %% 1) * 60) < 10, paste0("0", round((pace %% 1) * 60)), round((pace %% 1) * 60)), "/km"))
+  value = ifelse(is.nan(as.numeric(floor(pace <- mean(df_running_365$pace, na.rm = TRUE)), ":", round((pace %% 1) * 60))), "No data",paste0(floor(pace <- mean(df_running_365$pace, na.rm = TRUE)), ":", ifelse(round((pace %% 1) * 60) < 10, paste0("0", round((pace %% 1) * 60)), round((pace %% 1) * 60)), "/km"))
 )
 ```
 
@@ -427,7 +427,7 @@ list(
 list(
   #icon = "speedometer",
   color = "warning",
-  value = ifelse(sum(df_cycling_365$time, na.rm = TRUE) / 60 >= 300, paste0(round(floor(sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60), 0),"h", ifelse(round(((sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)<10,paste0("0",round(((sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)),round(((sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)), " min"), paste0(round(sum(df_cycling_365$time, na.rm = TRUE) / 60, 0), " min"))
+  value = ifelse(sum(df_cycling_365$time, na.rm = TRUE) / 60 >= 300, paste0(round(floor(sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60), 0)," h ", ifelse(round(((sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)<10,paste0("0",round(((sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)),round(((sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)), " min"), paste0(round(sum(df_cycling_365$time, na.rm = TRUE) / 60, 0), " min"))
 )
 ```
 
@@ -463,7 +463,7 @@ list(
 list(
   #icon = "speedometer",
   color = "warning",
-  value = ifelse(is.nan(as.numeric(round(sum(df_cycling_365$distance * df_cycling_365$speed) / sum(df_cycling_365$distance), 1))), "No data", paste0(round(sum(df_cycling_365$distance * df_cycling_365$speed) / sum(df_cycling_365$distance), 1), " km/h"))
+  value = ifelse(is.nan(as.numeric(round(mean(df_cycling_365$speed, na.rm = TRUE), 1))), "No data", paste0(round(mean(df_cycling_365$speed, na.rm = TRUE), 1), " km/h"))
 )
 ```
 
@@ -622,7 +622,7 @@ list(
 list(
   #icon = "speedometer",
   color = "info",
-  value = ifelse(sum(df_swimming_365$time, na.rm = TRUE) / 60 >= 300, paste0(round(floor(sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60), 0),"h", ifelse(round(((sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)<10,paste0("0",round(((sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)),round(((sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)), " min"), paste0(round(sum(df_swimming_365$time, na.rm = TRUE) / 60, 0), " min"))
+  value = ifelse(sum(df_swimming_365$time, na.rm = TRUE) / 60 >= 300, paste0(round(floor(sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60), 0)," h ", ifelse(round(((sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)<10,paste0("0",round(((sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)),round(((sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)), " min"), paste0(round(sum(df_swimming_365$time, na.rm = TRUE) / 60, 0), " min"))
 )
 ```
 
@@ -647,7 +647,7 @@ list(
 list(
   #icon = "speedometer",
   color = "info",
-  value = ifelse(is.nan(as.numeric(floor(pace <- sum(df_swimming_365$distance * df_swimming_365$pace) / sum(df_swimming_365$distance)/10), ":", round((pace %% 1) * 60))), "No data", paste0(floor(pace <- sum(df_swimming_365$distance * df_swimming_365$pace) / sum(df_swimming_365$distance)/10), ":", ifelse(round((pace %% 1) * 60) < 10, paste0("0", round((pace %% 1) * 60)), round((pace %% 1) * 60)), "/100m"))
+  value = ifelse(is.nan(as.numeric(floor(pace <- mean(df_swimming_365$pace, na.rm = TRUE)/10), ":", round((pace %% 1) * 60))), "No data", paste0(floor(pace <- mean(df_swimming_365$pace, na.rm = TRUE)/10), ":", ifelse(round((pace %% 1) * 60) < 10, paste0("0", round((pace %% 1) * 60)), round((pace %% 1) * 60)), "/100m"))
 )
 ```
 
@@ -758,6 +758,174 @@ plot_map3_swimming
 # ♥
 
 UNDER DEVELOPMENT
+
+# All data
+
+## Row {height="25%"}
+
+HERE COMES BANNER
+
+## Row {height="75%"}
+
+
+
+```{r}
+#| echo: false
+library(plotly)
+library(crosstalk)
+library(reactable)
+library(dplyr)
+
+# Prepare SharedData objects
+overview_running <- SharedData$new(overview_running %>% mutate(km = as.numeric(km)))
+overview_cycling <- SharedData$new(overview_cycling)
+overview_swimming <- SharedData$new(overview_swimming)
+```
+
+### Column {width="33%"}
+
+#### Row (height="25%")
+
+```{r}
+#| echo: false
+reactable(
+  overview_running,
+  class = "tag",
+  filterable = FALSE,     # disables column filters
+  searchable = FALSE,     # disables global search
+  highlight = TRUE,       # highlight row on hover
+  pagination = FALSE,     # show all rows (equivalent to pageLength = nrow(...))
+  selection = "single",
+  onClick = "select",
+  defaultColDef = colDef(align = "left"))
+```
+
+#### Row (height="75%")
+
+```{r}
+#| echo: false
+subplot(
+
+# Running distance
+plot_overview_running1 <- 
+  plot_ly(overview_running, x = ~date, 
+          y = ~km, 
+          type = 'scatter', 
+          mode = 'markers', 
+          name = "Distance (km)", 
+          marker = list(color = "#54b98f", symbol="circle-dot"),
+          text = ~paste(wday(date, label = TRUE, abbr = FALSE, week_start = 1), format(as.Date(date), "%d/%m/%y"), "</b><br>Distance:", km, "km"),# "<br>Time:", round(time, 0), "min", "<br>Pace:", paste0(floor(pace <- pace), ":", ifelse(round((pace %% 1) * 60) < 10, paste0("0", round((pace %% 1) * 60)), round((pace %% 1) * 60)), "/km"), "<br>Speed:", paste0(round(speed, 1), "km/h"), "<br>Avg. HR:", round(hr, 0), "bpm", "<br>Max. HR:", round(hr_max, 0), "bpm"),
+          hoverinfo = 'text', textposition = "none", opacity = 0.97) |>
+  config(displayModeBar = FALSE, staticPlot = FALSE) |>
+  layout(paper_bgcolor="#2d2d2d", plot_bgcolor="#2d2d2d", hoverlabel = list(font = list(color = "white"), bgcolor = "#2d2d2d", bordercolor = "#54b98f"),
+         xaxis = list(title = NA, visible = TRUE, showticklabels = FALSE, ticks = "", fixedrange = TRUE, gridcolor = "transparent", gridwidth = 0.25),
+         yaxis = list(tickfont = list(size=10, color="#54b98f"), ticksuffix = " km", fixedrange = TRUE, title = NA, visible = TRUE, showticklabels = TRUE, ticks = "", side ="top", gridcolor = "#333", gridwidth = 0.25),
+         margin = list(l = 0, r = 0, t = 0, b = 0)),
+
+# Running pace
+plot_overview_running2 <- 
+  plot_ly(overview_running, x = ~date, 
+          y = ~pace, 
+          type = 'scatter', 
+          mode = 'markers', 
+          name = "Distance (km)", 
+          marker = list(color = "#54b98f", symbol="star-triangle-up-dot"),
+          text = ~paste(wday(date, label = TRUE, abbr = FALSE, week_start = 1), format(as.Date(date), "%d/%m/%y"), "</b><br>Pace:", pace, "min/km"),# "<br>Time:", round(time, 0), "min", "<br>Pace:", paste0(floor(pace <- pace), ":", ifelse(round((pace %% 1) * 60) < 10, paste0("0", round((pace %% 1) * 60)), round((pace %% 1) * 60)), "/km"), "<br>Speed:", paste0(round(speed, 1), "km/h"), "<br>Avg. HR:", round(hr, 0), "bpm", "<br>Max. HR:", round(hr_max, 0), "bpm"),
+          hoverinfo = 'text', textposition = "none", opacity = 0.97) |>
+  config(displayModeBar = FALSE, staticPlot = FALSE) |>
+  layout(paper_bgcolor="#2d2d2d", plot_bgcolor="#2d2d2d", hoverlabel = list(font = list(color = "white"), bgcolor = "#2d2d2d", bordercolor = "#54b98f"),
+         xaxis = list(title = NA, visible = TRUE, showticklabels = FALSE, ticks = "", fixedrange = TRUE, gridcolor = "transparent", gridwidth = 0.25),
+         yaxis = list(tickfont = list(size=10, color="#54b98f"), ticksuffix = "/km", fixedrange = TRUE, title = NA, visible = TRUE, showticklabels = TRUE, ticks = "", side ="top", gridcolor = "#333", gridwidth = 0.25),
+         margin = list(l = 0, r = 0, t = 0, b = 0)),
+
+# Running hr
+plot_overview_running3 <- 
+  plot_ly(overview_running, x = ~date, 
+          y = ~hr, 
+          type = 'scatter', 
+          mode = 'markers', 
+          name = "Distance (km)", 
+          marker = list(color = "#54b98f", symbol="star-dot"),
+          text = ~paste(wday(date, label = TRUE, abbr = FALSE, week_start = 1), format(as.Date(date), "%d/%m/%y"), "</b><br>HR:", hr, "bpm"),# "<br>Time:", round(time, 0), "min", "<br>Pace:", paste0(floor(pace <- pace), ":", ifelse(round((pace %% 1) * 60) < 10, paste0("0", round((pace %% 1) * 60)), round((pace %% 1) * 60)), "/km"), "<br>Speed:", paste0(round(speed, 1), "km/h"), "<br>Avg. HR:", round(hr, 0), "bpm", "<br>Max. HR:", round(hr_max, 0), "bpm"),
+          hoverinfo = 'text', textposition = "none", opacity = 0.97) |>
+  config(displayModeBar = FALSE, staticPlot = FALSE) |>
+  layout(paper_bgcolor="#2d2d2d", plot_bgcolor="#2d2d2d", hoverlabel = list(font = list(color = "white"), bgcolor = "#2d2d2d", bordercolor = "#54b98f"),
+         xaxis = list(title = NA, visible = TRUE, showticklabels = FALSE, ticks = "", fixedrange = TRUE, gridcolor = "transparent", gridwidth = 0.25),
+         yaxis = list(tickfont = list(size=10, color="#54b98f"), ticksuffix = "bpm", fixedrange = TRUE, title = NA, visible = TRUE, showticklabels = TRUE, ticks = "", side ="top", gridcolor = "#333", gridwidth = 0.25),
+         margin = list(l = 0, r = 0, t = 0, b = 0)),
+
+
+
+  nrows = 3,
+  shareX = TRUE,
+  titleY = TRUE,
+  margin = 0.07) |>
+  layout(showlegend = FALSE)
+```
+
+### Column {width="33%"}
+
+#### Row (height="25%")
+
+```{r}
+#| echo: false
+reactable(
+  overview_running,
+  class = "tag",
+  filterable = FALSE,     # disables column filters
+  searchable = FALSE,     # disables global search
+  highlight = TRUE,       # highlight row on hover
+  pagination = FALSE,     # show all rows (equivalent to pageLength = nrow(...))
+  selection = "single",
+  onClick = "select",
+  defaultColDef = colDef(align = "left"))
+```
+
+#### Row (height="75%")
+
+```{r}
+#| echo: false
+subplot(
+  plot_ly(overview_running, x = ~date, y = ~km, type = 'scatter', mode = 'markers', name = "Distance (km)", marker = list(color = 'blue')),
+  plot_ly(overview_running, x = ~date, y = ~pace, type = 'scatter', mode = 'markers', name = "Pace", marker = list(color = 'green')),
+  plot_ly(overview_running, x = ~date, y = ~hr, type = 'scatter', mode = 'markers', name = "Heart Rate", marker = list(color = 'red')),
+  nrows = 3,
+  shareX = TRUE,
+  titleY = TRUE
+)
+
+```
+
+### Column {width="33%"}
+
+#### Row (height="25%")
+
+```{r}
+#| echo: false
+reactable(
+  overview_running,
+  class = "tag",
+  filterable = FALSE,     # disables column filters
+  searchable = FALSE,     # disables global search
+  highlight = TRUE,       # highlight row on hover
+  pagination = FALSE,     # show all rows (equivalent to pageLength = nrow(...))
+  selection = "single",
+  onClick = "select",
+  defaultColDef = colDef(align = "left"))
+```
+
+#### Row (height="75%")
+
+```{r}
+#| echo: false
+plot_ly(overview_running, x = ~date, y = ~km, type = 'scatter', mode = 'markers', text = ~date)
+
+#| echo: false
+plot_ly(overview_running, x = ~date, y = ~pace, type = 'scatter', mode = 'markers', text = ~date)
+
+#| echo: false
+plot_ly(overview_running, x = ~date, y = ~hr, type = 'scatter', mode = 'markers', text = ~date)
+```
 
 # Datasets
 
