@@ -755,7 +755,7 @@ plot_map3_swimming
 plot_map3_swimming
 ```
 
-# ♥
+<!--# ♥
 
 UNDER DEVELOPMENT
 
@@ -926,7 +926,7 @@ plot_ly(overview_running, x = ~date, y = ~pace, type = 'scatter', mode = 'marker
 #| echo: false
 plot_ly(overview_running, x = ~date, y = ~hr, type = 'scatter', mode = 'markers', text = ~date)
 ```
-
+-->
 # Datasets
 
 ## Row {height="30%"}
