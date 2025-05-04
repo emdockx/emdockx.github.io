@@ -262,6 +262,18 @@ list(
 
 #### Row {height="20%"}
 
+```{r running-box-elevation}
+#| content: valuebox
+#| title: "Total Elevation"
+list(
+  #icon = "speedometer",
+  color = "warning",
+  value = ifelse(sum(df_running_365$elevation, na.rm = TRUE) < 1000, paste0(round(sum(df_running_365$elevation, na.rm = TRUE), 1), " m"), paste0(round(sum(df_running_365$elevation, na.rm = TRUE)/1000, 1), " km"))
+)
+```
+
+#### Row {height="20%"}
+
 ```{r running-box-cadence}
 #| content: valuebox
 #| title: "Average Cadence"
@@ -439,7 +451,7 @@ list(
 list(
   #icon = "speedometer",
   color = "warning",
-  value = paste0(round(sum(df_cycling_365$elevation, na.rm = TRUE), 1), " m")
+  value = ifelse(sum(df_cycling_365$elevation, na.rm = TRUE) < 1000, paste0(round(sum(df_cycling_365$elevation, na.rm = TRUE), 1), " m"), paste0(round(sum(df_cycling_365$elevation, na.rm = TRUE)/1000, 1), " km"))
 )
 ```
 
