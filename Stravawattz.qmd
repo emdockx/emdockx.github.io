@@ -267,7 +267,7 @@ list(
 #| title: "Total Elevation"
 list(
   #icon = "speedometer",
-  color = "warning",
+  color = "success",
   value = ifelse(sum(df_running_365$elevation, na.rm = TRUE) < 1000, paste0(round(sum(df_running_365$elevation, na.rm = TRUE), 1), " m"), paste0(round(sum(df_running_365$elevation, na.rm = TRUE)/1000, 1), " km"))
 )
 ```
@@ -344,6 +344,12 @@ plot_time_running
 
 ```{r}
 #| padding: 0px
+#| title: "Elevation"
+plot_elevation_running
+```
+
+```{r}
+#| padding: 0px
 #| title: "Pace"
 plot_pace_running
 ```
@@ -370,6 +376,12 @@ plot_cum_distance_running
 #| padding: 0px
 #| title: "Time"
 plot_cum_time_running
+```
+
+```{r}
+#| padding: 0px
+#| title: "Elevation"
+plot_cum_elevation_running
 ```
 
 #### Row {height="75%"}
