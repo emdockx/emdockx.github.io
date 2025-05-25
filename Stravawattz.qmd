@@ -30,13 +30,13 @@ load("stravawattz.RData")
 
 # Home
 
-## Row {.tabset title="Overview per year"}
+## Row {height="100%"}
 
-### 2025
+### Column {width="85%"}
 
-#### Column {width="60%"}
+#### Row {height="20%"}
 
-##### Row {height="20%"}
+##### Column {width="20%"}
 
 ```{r}
 #| content: valuebox
@@ -48,6 +48,8 @@ list(
 )
 ```
 
+##### Column {width="20%"}
+
 ```{r}
 #| content: valuebox
 list(
@@ -57,6 +59,8 @@ list(
   value = paste0(length(df_cycling_2025$id), " sessions")
 )
 ```
+
+##### Column {width="20%"}
 
 ```{r}
 #| content: valuebox
@@ -68,52 +72,49 @@ list(
 )
 ```
 
-##### Row {height="25%"}
+##### Column {width="40%"}
 
 ```{r}
 plot_calendar_frontpage_2025
 ```
 
-##### Row {height="55%"}
+#### Row {height="80%"}
 
 ```{r}
-plot_calendar_frontpage_2025
+plot_training_load
 ```
 
-#### Column {width="40%"}
+### Column {width="15%"}
 
-##### Row {height="20%"}
+#### Row {height="21%"}
 
-###### Column {width="25%"}
+```{r}
+#| content: valuebox
+list(
+  title = "TRAINING LOAD",
+  #icon = "hash",
+  color = "danger",
+  value = status_today
+)
+```
+
+#### Row {height="26.5%"}
 
 ```{r}
 ATL_gauge
 ```
 
-###### Column {width="25%"}
+#### Row {height="26.5%"}
 
 ```{r}
 CTL_gauge
 ```
 
-###### Column {width="25%"}
+#### Row {height="26.5%"}
 
 ```{r}
 ACWR_gauge
 ```
-
-###### Column {width="25%"}
-
-```{r}
-training_status
-```
-
-##### Row {height="80%"}
-
-```{r}
-plot_calendar_frontpage_2025
-```
-
 
 
 
