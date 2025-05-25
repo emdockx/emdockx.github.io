@@ -30,21 +30,13 @@ load("stravawattz.RData")
 
 # Home
 
-## Row {height="100%"}
+## Row {.tabset title="Overview per year"}
 
-### Column {width="45%"}
+### 2025
 
-#### Row {height="55%"}
+#### Column {width="60%"}
 
-##### Column
-
-###### Card Tabset {.tabset title="Activities per year" height="50%"}
-
-####### 2025
-
-######## Column {width="100%"}
-
-######### Row {height="30%"}
+##### Row {height="20%"}
 
 ```{r}
 #| content: valuebox
@@ -76,145 +68,62 @@ list(
 )
 ```
 
-######### Row {height="70%"}
+##### Row {height="25%"}
 
 ```{r}
 plot_calendar_frontpage_2025
 ```
 
-####### 2024
-
-######## Row {height="100%"}
-
-######### Column {width="100%"}
-
-########## Row {height="30%"}
+##### Row {height="55%"}
 
 ```{r}
-#| content: valuebox
-list(
-  title = "RUNNING",
-  #icon = "hash",
-  color = "success",
-  value = paste0(length(df_running_2024$id), " sessions")
-)
+plot_calendar_frontpage_2025
 ```
+
+#### Column {width="40%"}
+
+##### Row {height="20%"}
+
+###### Column {width="25%"}
 
 ```{r}
-#| content: valuebox
-list(
-  title = "CYCLING",
-  #icon = "hash",
-  color = "warning",
-  value = paste0(length(df_cycling_2024$id), " sessions")
-)
+ATL_gauge
 ```
+
+###### Column {width="25%"}
 
 ```{r}
-#| content: valuebox
-list(
-  title = "SWIMMING",
-  #icon = "hash",
-  color = "info",
-  value = paste0(length(df_swimming_2024$id), " sessions")
-)
+CTL_gauge
 ```
 
-########## Row {height="70%"}
+###### Column {width="25%"}
 
 ```{r}
-plot_calendar_frontpage_2024
+ACWR_gauge
 ```
 
-####### 2023
-
-######## Row {height="100%"}
-
-######### Column {width="100%"}
-
-########## Row {height="30%"}
+###### Column {width="25%"}
 
 ```{r}
-#| content: valuebox
-list(
-  title = "RUNNING",
-  #icon = "hash",
-  color = "success",
-  value = paste0(length(df_running_2023$id), " sessions")
-)
+training_status
 ```
+
+##### Row {height="80%"}
 
 ```{r}
-#| content: valuebox
-list(
-  title = "CYCLING",
-  #icon = "hash",
-  color = "warning",
-  value = paste0(length(df_cycling_2023$id), " sessions")
-)
+plot_calendar_frontpage_2025
 ```
 
-```{r}
-#| content: valuebox
-list(
-  title = "SWIMMING",
-  #icon = "hash",
-  color = "info",
-  value = paste0(length(df_swimming_2023$id), " sessions")
-)
-```
 
-########## Row {height="70%"}
 
-```{r}
-plot_calendar_frontpage_2023
-```
 
-#### Row {height="45%"}
 
-```{=html}
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9616514614388484"
-     crossorigin="anonymous"></script>
-<!-- stravawattz_frontpage -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9616514614388484"
-     data-ad-slot="8670886418"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-```
 
-### Column {width="55%"}
 
-##### Card Tabset {.tabset title="All-time datasets" height="100%"}
 
-###### Running
 
-```{r}
-#| padding: 0px
-datatable(df_running_all |> arrange(desc(date)) |> mutate(pace = sprintf("%02d:%02d", floor(pace), round((pace %% 1) * 60)), time = round(time/60,0), date = format(as.Date(date), "%y-%m-%d"), distance = format(round(distance/1000,1),1)) |> select(date, km = distance, time, pace, hr), rownames = FALSE, options = list(initComplete = JS("function(settings, json) {$(this.api().table().header()).css({'color': '#00bc8c', 'text-align': 'center', 'font-weight': 'bold'});}"), searching = FALSE, lengthChange = FALSE, pageLength = nrow(df_running_all), info = FALSE, columnDefs = list(list(className = 'dt-center', targets = 0:4)))) |>
-  formatStyle(c("date", "pace", "km", "time", "hr"), color = "black", background = "#00bc8c")
-```
 
-###### Cycling
 
-```{r}
-#| padding: 0px
-datatable(df_cycling_all |> arrange(desc(date)) |> mutate(speed = format(round(speed,1),1), time = round(time/60,0), date = format(as.Date(date), "%y-%m-%d"), distance = format(round(distance/1000,1),1)) |> select(date, km = distance, time, speed, hr), rownames = FALSE, options = list(initComplete = JS("function(settings, json) {$(this.api().table().header()).css({'color': '#f39c12', 'text-align': 'center', 'font-weight': 'bold'});}"), searching = FALSE, lengthChange = FALSE, pageLength = nrow(df_cycling_all), info = FALSE, columnDefs = list(list(className = 'dt-center', targets = 0:4)))) |>
-  formatStyle(c("date", "speed", "km", "time", "hr"), color = "black", background = "#f39c12")
-```
-
-###### Swimming
-
-```{r}
-#| padding: 0px
-#| 
-datatable(df_swimming_all |> arrange(desc(date)) |> mutate(pace = pace/10, pace = sprintf("%02d:%02d", floor(pace), round((pace %% 1) * 60)), time = round(time/60,0), date = format(as.Date(date), "%y-%m-%d"), distance = format(round(distance,1),1)) |> select(date, meter = distance, time, pace, hr), rownames = FALSE, options = list(initComplete = JS("function(settings, json) {$(this.api().table().header()).css({'color': '#3498db', 'text-align': 'center', 'font-weight': 'bold'});}"), searching = FALSE, lengthChange = FALSE, pageLength = nrow(df_swimming_all), info = FALSE, columnDefs = list(list(className = 'dt-center', targets = 0:4)))) |>
-  formatStyle(c("date", "pace", "meter", "time", "hr"), color = "black", background = "#3498db")
-```
 
 
 # Running

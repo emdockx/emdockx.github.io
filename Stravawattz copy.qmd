@@ -1,0 +1,780 @@
+---
+format: dashboard
+title: STRAVAWATTZ
+logo: Stravawattz.png
+theme: 
+  - darkly
+  - styles.scss
+expandable: false
+---
+
+```{r load-packages}
+library(dplyr)
+library(jsonlite)
+library(httr)
+library(ggplot2)
+library(stringr)
+library(tidyr)
+library(purrr)
+library(lubridate)
+library(leaflet)
+library(DT)
+library(plotly)
+library(openmeteo)
+library(RColorBrewer)
+```
+
+```{r load-data}
+load("stravawattz.RData")
+```
+
+# Home
+
+## Row {height="100%"}
+
+### Column {width="45%"}
+
+#### Row {height="55%"}
+
+##### Column
+
+###### Card Tabset {.tabset title="Activities per year" height="50%"}
+
+####### 2025
+
+######## Column {width="100%"}
+
+######### Row {height="30%"}
+
+```{r}
+#| content: valuebox
+list(
+  title = "RUNNING",
+  #icon = "hash",
+  color = "success",
+  value = paste0(length(df_running_2025$id), " sessions")
+)
+```
+
+```{r}
+#| content: valuebox
+list(
+  title = "CYCLING",
+  #icon = "hash",
+  color = "warning",
+  value = paste0(length(df_cycling_2025$id), " sessions")
+)
+```
+
+```{r}
+#| content: valuebox
+list(
+  title = "SWIMMING",
+  #icon = "hash",
+  color = "info",
+  value = paste0(length(df_swimming_2025$id), " sessions")
+)
+```
+
+######### Row {height="70%"}
+
+```{r}
+plot_calendar_frontpage_2025
+```
+
+####### 2024
+
+######## Row {height="100%"}
+
+######### Column {width="100%"}
+
+########## Row {height="30%"}
+
+```{r}
+#| content: valuebox
+list(
+  title = "RUNNING",
+  #icon = "hash",
+  color = "success",
+  value = paste0(length(df_running_2024$id), " sessions")
+)
+```
+
+```{r}
+#| content: valuebox
+list(
+  title = "CYCLING",
+  #icon = "hash",
+  color = "warning",
+  value = paste0(length(df_cycling_2024$id), " sessions")
+)
+```
+
+```{r}
+#| content: valuebox
+list(
+  title = "SWIMMING",
+  #icon = "hash",
+  color = "info",
+  value = paste0(length(df_swimming_2024$id), " sessions")
+)
+```
+
+########## Row {height="70%"}
+
+```{r}
+plot_calendar_frontpage_2024
+```
+
+####### 2023
+
+######## Row {height="100%"}
+
+######### Column {width="100%"}
+
+########## Row {height="30%"}
+
+```{r}
+#| content: valuebox
+list(
+  title = "RUNNING",
+  #icon = "hash",
+  color = "success",
+  value = paste0(length(df_running_2023$id), " sessions")
+)
+```
+
+```{r}
+#| content: valuebox
+list(
+  title = "CYCLING",
+  #icon = "hash",
+  color = "warning",
+  value = paste0(length(df_cycling_2023$id), " sessions")
+)
+```
+
+```{r}
+#| content: valuebox
+list(
+  title = "SWIMMING",
+  #icon = "hash",
+  color = "info",
+  value = paste0(length(df_swimming_2023$id), " sessions")
+)
+```
+
+########## Row {height="70%"}
+
+```{r}
+plot_calendar_frontpage_2023
+```
+
+#### Row {height="45%"}
+
+```{=html}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9616514614388484"
+     crossorigin="anonymous"></script>
+<!-- stravawattz_frontpage -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9616514614388484"
+     data-ad-slot="8670886418"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+```
+
+### Column {width="55%"}
+
+##### Card Tabset {.tabset title="All-time datasets" height="100%"}
+
+###### Running
+
+```{r}
+#| padding: 0px
+datatable(df_running_all |> arrange(desc(date)) |> mutate(pace = sprintf("%02d:%02d", floor(pace), round((pace %% 1) * 60)), time = round(time/60,0), date = format(as.Date(date), "%y-%m-%d"), distance = format(round(distance/1000,1),1)) |> select(date, km = distance, time, pace, hr), rownames = FALSE, options = list(initComplete = JS("function(settings, json) {$(this.api().table().header()).css({'color': '#00bc8c', 'text-align': 'center', 'font-weight': 'bold'});}"), searching = FALSE, lengthChange = FALSE, pageLength = nrow(df_running_all), info = FALSE, columnDefs = list(list(className = 'dt-center', targets = 0:4)))) |>
+  formatStyle(c("date", "pace", "km", "time", "hr"), color = "black", background = "#00bc8c")
+```
+
+###### Cycling
+
+```{r}
+#| padding: 0px
+datatable(df_cycling_all |> arrange(desc(date)) |> mutate(speed = format(round(speed,1),1), time = round(time/60,0), date = format(as.Date(date), "%y-%m-%d"), distance = format(round(distance/1000,1),1)) |> select(date, km = distance, time, speed, hr), rownames = FALSE, options = list(initComplete = JS("function(settings, json) {$(this.api().table().header()).css({'color': '#f39c12', 'text-align': 'center', 'font-weight': 'bold'});}"), searching = FALSE, lengthChange = FALSE, pageLength = nrow(df_cycling_all), info = FALSE, columnDefs = list(list(className = 'dt-center', targets = 0:4)))) |>
+  formatStyle(c("date", "speed", "km", "time", "hr"), color = "black", background = "#f39c12")
+```
+
+###### Swimming
+
+```{r}
+#| padding: 0px
+#| 
+datatable(df_swimming_all |> arrange(desc(date)) |> mutate(pace = pace/10, pace = sprintf("%02d:%02d", floor(pace), round((pace %% 1) * 60)), time = round(time/60,0), date = format(as.Date(date), "%y-%m-%d"), distance = format(round(distance,1),1)) |> select(date, meter = distance, time, pace, hr), rownames = FALSE, options = list(initComplete = JS("function(settings, json) {$(this.api().table().header()).css({'color': '#3498db', 'text-align': 'center', 'font-weight': 'bold'});}"), searching = FALSE, lengthChange = FALSE, pageLength = nrow(df_swimming_all), info = FALSE, columnDefs = list(list(className = 'dt-center', targets = 0:4)))) |>
+  formatStyle(c("date", "pace", "meter", "time", "hr"), color = "black", background = "#3498db")
+```
+
+# Running
+
+## Row {height="100%"}
+
+### Column {width="15%"}
+
+#### Row {height="20%"}
+
+```{r running-box-sessions}
+#| content: valuebox
+list(
+  title = paste("Running in", format(Sys.Date(), '%Y')),
+  #icon = "hash",
+  color = "success",
+  value = paste0(length(df_running_365$id), " sessions")
+)
+```
+
+#### Row {height="20%"}
+
+```{r running-box-distance}
+#| content: valuebox
+#| title: "Total Distance"
+list(
+  #icon = "rocket-takeoff-fill",
+  color = "success",
+  value = paste0(round(sum(df_running_365$distance, na.rm = TRUE) / 1000, 1), " km")
+)
+```
+
+#### Row {height="20%"}
+
+```{r running-box-time}
+#| content: valuebox
+#| title: "Total Duration"
+#| padding: 0px
+list(
+  #icon = "speedometer",
+  color = "success",
+  value = ifelse(sum(df_running_365$time, na.rm = TRUE) / 60 >= 300, paste0(round(floor(sum(df_running_365$time, na.rm = TRUE) / 60 / 60), 0),"h ", ifelse(round(((sum(df_running_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_running_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)<10,paste0("0",round(((sum(df_running_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_running_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)),round(((sum(df_running_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_running_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)), "min"), paste0(round(sum(df_running_365$time, na.rm = TRUE) / 60, 0), "min"))
+)
+```
+
+#### Row {height="20%"}
+
+```{r running-box-elevation}
+#| content: valuebox
+#| title: "Total Elevation"
+list(
+  #icon = "speedometer",
+  color = "success",
+  value = ifelse(sum(df_running_365$elevation, na.rm = TRUE) < 1000, paste0(round(sum(df_running_365$elevation, na.rm = TRUE), 1), " m"), paste0(round(sum(df_running_365$elevation, na.rm = TRUE)/1000, 1), " km"))
+)
+```
+
+#### Row {height="20%"}
+
+```{r running-box-cadence}
+#| content: valuebox
+#| title: "Average Cadence"
+list(
+  #icon = "rocket-takeoff-fill",
+  color = "success",
+  value = paste0(161, " spm")
+)
+```
+
+#### Row {height="20%"}
+
+```{r running-box-pace}
+#| content: valuebox
+#| title: "Average Pace"
+list(
+  #icon = "speedometer",
+  color = "success",
+  value = ifelse(is.nan(as.numeric(floor(pace <- mean(df_running_365$pace, na.rm = TRUE)), ":", round((pace %% 1) * 60))), "No data",paste0(floor(pace <- mean(df_running_365$pace, na.rm = TRUE)), ":", ifelse(round((pace %% 1) * 60) < 10, paste0("0", round((pace %% 1) * 60)), round((pace %% 1) * 60)), "/km"))
+)
+```
+
+#### Row {height="20%"}
+
+```{r running-box-hr}
+#| content: valuebox
+#| title: "Average HR"
+list(
+  #icon = "speedometer",
+  color = "success",
+  value = ifelse(is.nan(as.numeric(round(sum(df_running_365$speed * df_running_365$hr) / sum(df_running_365$speed), 0))), "No data", paste0(round(sum(df_running_365$speed * df_running_365$hr) / sum(df_running_365$speed), 0), " bpm"))
+)
+```
+
+### Column {width="42.5%"}
+
+#### Row {height="25%"}
+
+##### Column {.tabset title="Calendar"}
+
+```{r}
+#| padding: 0px
+#| title: "Daily"
+plot_calendar_running_d
+```
+
+```{r}
+#| padding: 0px
+#| title: "Monthly"
+plot_calendar_running_m
+```
+
+#### Row {height="75%"}
+
+##### Column {.tabset title="Rankings"}
+
+```{r}
+#| padding: 0px
+#| title: "Distance"
+plot_distance_running
+```
+
+```{r}
+#| padding: 0px
+#| title: "Time"
+plot_time_running
+```
+
+```{r}
+#| padding: 0px
+#| title: "Elevation"
+plot_elevation_running
+```
+
+```{r}
+#| padding: 0px
+#| title: "Pace"
+plot_pace_running
+```
+
+```{r}
+#| padding: 0px
+#| title: "HR"
+plot_hr_running
+```
+
+### Column {width="42.5%"}
+
+#### Row {height="25%"}
+
+##### Column {.tabset title="Cumulative"}
+
+```{r}
+#| padding: 0px
+#| title: "Distance"
+plot_cum_distance_running
+```
+
+```{r}
+#| padding: 0px
+#| title: "Time"
+plot_cum_time_running
+```
+
+```{r}
+#| padding: 0px
+#| title: "Elevation"
+plot_cum_elevation_running
+```
+
+#### Row {height="75%"}
+
+##### Column {.tabset title="Maps"}
+
+```{r}
+#| title: "Latest"
+#| padding: 0px 
+plot_map1_running
+```
+
+```{r}
+#| title: "Fastest"
+#| padding: 0px 
+plot_map2_running
+```
+
+```{r}
+#| title: "Longest"
+#| padding: 0px 
+plot_map3_running
+```
+
+```{r}
+#| title: "All"
+#| padding: 0px 
+plot_map4_running
+```
+
+# Cycling
+
+## Row {height="100%"}
+
+### Column {width="15%"}
+
+#### Row {height="14.29%"}
+
+```{r cycling-box-sessions}
+#| content: valuebox
+list(
+  title = paste("Cycling in", format(Sys.Date(), '%Y')),
+  #icon = "hash",
+  color = "warning",
+  value = paste0(length(df_cycling_365$id), " sessions")
+)
+```
+
+#### Row {height="14.29%"}
+
+```{r cycling-box-distance}
+#| content: valuebox
+#| title: "Total Distance"
+list(
+  #icon = "rocket-takeoff-fill",
+  color = "warning",
+  value = paste0(round(sum(df_cycling_365$distance, na.rm = TRUE) / 1000, 1), " km")
+)
+```
+
+#### Row {height="14.29%"}
+
+```{r cycling-box-time}
+#| content: valuebox
+#| title: "Total Duration"
+#| padding: 0px
+list(
+  #icon = "speedometer",
+  color = "warning",
+  value = ifelse(sum(df_cycling_365$time, na.rm = TRUE) / 60 >= 300, paste0(round(floor(sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60), 0),"h ", ifelse(round(((sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)<10,paste0("0",round(((sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)),round(((sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_cycling_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)), "min"), paste0(round(sum(df_cycling_365$time, na.rm = TRUE) / 60, 0), "min"))
+)
+```
+
+#### Row {height="14.29%"}
+
+```{r cycling-box-elevation}
+#| content: valuebox
+#| title: "Total Elevation"
+list(
+  #icon = "speedometer",
+  color = "warning",
+  value = ifelse(sum(df_cycling_365$elevation, na.rm = TRUE) < 1000, paste0(round(sum(df_cycling_365$elevation, na.rm = TRUE), 1), " m"), paste0(round(sum(df_cycling_365$elevation, na.rm = TRUE)/1000, 1), " km"))
+)
+```
+
+#### Row {height="14.29%"}
+
+```{r cycling-box-cadence}
+#| content: valuebox
+#| title: "Average Cadence"
+list(
+  #icon = "speedometer",
+  color = "warning",
+  value = paste0(round(mean(df_cycling_365$cadence, na.rm = TRUE), 1), " rpm")
+)
+```
+
+#### Row {height="14.29%"}
+
+```{r cycling-box-pace}
+#| content: valuebox
+#| title: "Average Speed"
+list(
+  #icon = "speedometer",
+  color = "warning",
+  value = ifelse(is.nan(as.numeric(round(mean(df_cycling_365$speed, na.rm = TRUE), 1))), "No data", paste0(round(mean(df_cycling_365$speed, na.rm = TRUE), 1), " km/h"))
+)
+```
+
+#### Row {height="14.29%"}
+
+```{r cycling-box-hr}
+#| content: valuebox
+#| title: "Average HR"
+list(
+  #icon = "speedometer",
+  color = "warning",
+  value = ifelse(is.na(as.numeric(round(sum(df_cycling_365$speed * df_cycling_365$hr) / sum(df_cycling_365$speed), 0))), "No data", paste0(round(sum(df_cycling_365$speed * df_cycling_365$hr) / sum(df_cycling_365$speed), 0), " bpm"))
+)
+```
+
+### Column {width="42.5%"}
+
+#### Row {height="25%"}
+
+##### Column {.tabset title="Calendar"}
+
+```{r}
+#| padding: 0px
+#| title: "Daily"
+plot_calendar_cycling_d
+```
+
+```{r}
+#| padding: 0px
+#| title: "Monthly"
+plot_calendar_cycling_m
+```
+
+#### Row {height="75%"}
+
+##### Column {.tabset title="Rankings"}
+
+```{r}
+#| padding: 0px
+#| title: "Distance"
+plot_distance_cycling
+```
+
+```{r}
+#| padding: 0px
+#| title: "Time"
+plot_time_cycling
+```
+
+```{r}
+#| padding: 0px
+#| title: "Elevation"
+plot_elevation_cycling
+```
+
+```{r}
+#| padding: 0px
+#| title: "Speed"
+plot_pace_cycling
+```
+
+```{r}
+#| padding: 0px
+#| title: "HR"
+plot_hr_cycling
+```
+
+### Column {width="42.5%"}
+
+#### Row {height="25%"}
+
+##### Column {.tabset title="Cumulative"}
+
+```{r}
+#| padding: 0px
+#| title: "Distance"
+plot_cum_distance_cycling
+```
+
+```{r}
+#| padding: 0px
+#| title: "Time"
+plot_cum_time_cycling
+```
+
+```{r}
+#| padding: 0px
+#| title: "Elevation"
+plot_cum_elevation_cycling
+```
+
+#### Row {height="75%"}
+
+##### Column {.tabset title="Maps"}
+
+```{r}
+#| title: "Latest"
+#| padding: 0px 
+plot_map1_cycling
+```
+
+```{r}
+#| title: "Fastest"
+#| padding: 0px 
+plot_map2_cycling
+```
+
+```{r}
+#| title: "Longest"
+#| padding: 0px 
+plot_map3_cycling
+```
+
+```{r}
+#| title: "All"
+#| padding: 0px 
+plot_map4_cycling
+```
+
+# Swimming
+
+## Row {height="100%"}
+
+### Column {width="15%"}
+
+#### Row {height="20%"}
+
+```{r swimming-box-sessions}
+#| content: valuebox
+list(
+  title = paste("Swimming in", format(Sys.Date(), '%Y')),
+  #icon = "hash",
+  color = "info",
+  value = paste0(length(df_swimming_365$id), " sessions")
+)
+```
+
+#### Row {height="20%"}
+
+```{r swimming-box-distance}
+#| content: valuebox
+#| title: "Total Distance"
+list(
+  #icon = "rocket-takeoff-fill",
+  color = "info",
+  value = paste0(round(sum(df_swimming_365$distance, na.rm = TRUE) / 1000, 1), " km")
+)
+```
+
+#### Row {height="20%"}
+
+```{r swimming-box-time}
+#| content: valuebox
+#| title: "Total Duration"
+#| padding: 0px
+list(
+  #icon = "speedometer",
+  color = "info",
+  value = ifelse(sum(df_swimming_365$time, na.rm = TRUE) / 60 >= 300, paste0(round(floor(sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60), 0),"h ", ifelse(round(((sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)<10,paste0("0",round(((sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)),round(((sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60) - floor(sum(df_swimming_365$time, na.rm = TRUE) / 60 / 60)) * 60, 0)), "min"), paste0(round(sum(df_swimming_365$time, na.rm = TRUE) / 60, 0), "min"))
+)
+```
+
+#### Row {height="20%"}
+
+```{r swimming-box-lengths}
+#| content: valuebox
+#| title: "Total Lengths (50m)"
+#| padding: 0px
+list(
+  #icon = "speedometer",
+  color = "info",
+  value = paste0(ifelse(sum(df_swimming_365$distance)/50%%2==0, sum(df_swimming_365$distance)/50, (sum(df_swimming_365$distance)/50)+1), " lengths")
+)
+```
+
+#### Row {height="20%"}
+
+```{r swimming-box-pace}
+#| content: valuebox
+#| title: "Average Pace"
+list(
+  #icon = "speedometer",
+  color = "info",
+  value = ifelse(is.nan(as.numeric(floor(pace <- mean(df_swimming_365$pace, na.rm = TRUE)/10), ":", round((pace %% 1) * 60))), "No data", paste0(floor(pace <- mean(df_swimming_365$pace, na.rm = TRUE)/10), ":", ifelse(round((pace %% 1) * 60) < 10, paste0("0", round((pace %% 1) * 60)), round((pace %% 1) * 60)), "/100m"))
+)
+```
+
+#### Row {height="20%"}
+
+```{r swimming-box-hr}
+#| content: valuebox
+#| title: "Average HR"
+list(
+  #icon = "speedometer",
+  color = "info",
+  value = ifelse(is.nan(as.numeric(round(sum(df_swimming_365$speed * df_swimming_365$hr) / sum(df_swimming_365$speed), 0))), "No data", paste0(round(sum(df_swimming_365$speed * df_swimming_365$hr) / sum(df_swimming_365$speed), 0), " bpm"))
+)
+```
+
+### Column {width="42.5%"}
+
+#### Row {height="25%"}
+
+##### Column {.tabset title="Calendar"}
+
+```{r}
+#| padding: 0px
+#| title: "Daily"
+plot_calendar_swimming_d
+```
+
+```{r}
+#| padding: 0px
+#| title: "Monthly"
+plot_calendar_swimming_m
+```
+
+#### Row {height="75%"}
+
+##### Column {.tabset title="Rankings"}
+
+```{r}
+#| padding: 0px
+#| title: "Distance"
+plot_distance_swimming
+```
+
+```{r}
+#| padding: 0px
+#| title: "Time"
+plot_time_swimming
+```
+
+```{r}
+#| padding: 0px
+#| title: "Pace"
+plot_pace_swimming
+```
+
+```{r}
+#| padding: 0px
+#| title: "HR"
+plot_hr_swimming
+```
+
+### Column {width="42.5%"}
+
+#### Row {height="25%"}
+
+##### Column {.tabset title="Cumulative"}
+
+```{r}
+#| padding: 0px
+#| title: "Distance"
+plot_cum_distance_swimming
+```
+
+```{r}
+#| padding: 0px
+#| title: "Time"
+plot_cum_time_swimming
+```
+
+#### Row {height="75%"}
+
+##### Column {.tabset title="Maps"}
+
+```{r}
+#| title: "Latest"
+#| padding: 0px 
+plot_map1_swimming
+```
+
+```{r}
+#| title: "Fastest"
+#| padding: 0px 
+plot_map2_swimming
+```
+
+```{r}
+#| title: "Longest"
+#| padding: 0px 
+plot_map3_swimming
+```
+
+```{r}
+#| title: "All"
+#| padding: 0px 
+plot_map3_swimming
+```
+
