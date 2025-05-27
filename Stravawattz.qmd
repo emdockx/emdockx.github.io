@@ -688,4 +688,3 @@ plot_map3_swimming
 #| padding: 0px 
 plot_map3_swimming
 ```
-
