@@ -1,13 +1,6 @@
 project:
   type: website
   output-dir: docs
-  
-resources:
-  - ads.txt
-
-adsense:
-    client: "ca-pub-9616514614388484"
-    slot: "5226569652"
 
 website:
   cookie-consent:
@@ -20,8 +13,3 @@ format:
     theme:
       - darkly
       - styles.scss
-    include-in-header:
-      - text: |
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9616514614388484"
-            crossorigin="anonymous"></script>
-
