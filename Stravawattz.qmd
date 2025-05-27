@@ -93,7 +93,7 @@ plot_training_load
 list(
   title = "TRAINING LOAD",
   #icon = "hash",
-  color = "danger",
+  color = ifelse(status_today %in% c("Recovery", "Light"), "warning", ifelse(status_today == "Optimal", "primary", "danger")),
   value = status_today
 )
 ```
