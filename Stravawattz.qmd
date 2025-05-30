@@ -32,11 +32,11 @@ load("stravawattz.RData")
 
 ## Row {height="100%"}
 
-### Column {width="75%"}
+### Column {width="85%"}
 
 #### Row {height="20%"}
 
-##### Column
+##### Column {width="20%"}
 
 ```{r}
 #| content: valuebox
@@ -48,7 +48,7 @@ list(
 )
 ```
 
-##### Column
+##### Column {width="20%"}
 
 ```{r}
 #| content: valuebox
@@ -60,7 +60,7 @@ list(
 )
 ```
 
-##### Column
+##### Column {width="20%"}
 
 ```{r}
 #| content: valuebox
@@ -72,61 +72,31 @@ list(
 )
 ```
 
-##### Column
+##### Column {width="40%"}
+
+```{r}
+plot_calendar_frontpage_2025
+```
+
+#### Row {height="80%"}
+
+```{r}
+plot_training_load
+```
+
+### Column {width="15%"}
+
+#### Row {height="21%"}
 
 ```{r}
 #| content: valuebox
 list(
-  title = "Training Load",
+  title = "TRAINING LOAD",
   #icon = "hash",
   # color = ifelse(status_today %in% c("Recovery", "Light"), "warning", ifelse(status_today == "Optimal", "primary", "danger")),
   color = "dark",
   value = status_today
 )
-```
-
-#### Row {height="80%"}
-
-##### Column {width="76%"}
-
-###### Row {height="50%"}
-
-```{r}
-plot_training_load
-```
-
-###### Row {height="50%"}
-
-```{r}
-plot_training_load
-```
-
-##### Column {width="24%"}
-
-###### Row
-
-```{r}
-ATL_gauge
-```
-
-###### Row
-
-```{r}
-CTL_gauge
-```
-
-###### Row
-
-```{r}
-ACWR_gauge
-```
-
-### Column {width="25%"}
-
-#### Row {height="21%"}
-
-```{r}
-plot_calendar_frontpage_2025
 ```
 
 #### Row {height="26.5%"}
