@@ -190,7 +190,7 @@ list(
 list(
   #icon = "rocket-takeoff-fill",
   color = "success",
-  value = paste0(161, " spm")
+  value = paste0("No data")
 )
 ```
 
